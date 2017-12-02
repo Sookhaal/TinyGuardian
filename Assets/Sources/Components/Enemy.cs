@@ -38,7 +38,6 @@ namespace Components {
 				DoThePath();
 			} else {
 				_basePosition = FollowThisGuy.transform.position;
-				_pathData = FollowThisGuy._pathData;
 				Delay += FollowThisGuy.Delay;
 				DoThePath();
 			}
