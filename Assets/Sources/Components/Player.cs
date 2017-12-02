@@ -20,6 +20,10 @@ namespace Components {
 		private GameEvent _selectThunderWeapon;
 		[SerializeField]
 		private GameEvent _selectWaterWeapon;
+		[SerializeField]
+		private BulletsPool _bulletsPool;
+		[SerializeField]
+		private Weapon _weapon;
 
 		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
@@ -30,6 +34,7 @@ namespace Components {
 			_transform = GetComponent<Transform>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_input = new Vector2();
+			_bulletsPool.SetupPool();
 		}
 
 		private void Update() {

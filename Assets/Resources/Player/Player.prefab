@@ -176,12 +176,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f23d3526575f2458dff5cb6bbd8b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
+  Weapons:
   - {fileID: 11400000, guid: 8b3fd737384030f41a138917528638a0, type: 2}
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
-  - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
+  - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
   _selectedWeapon: 1
+  _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114207413118353404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,6 +315,8 @@ MonoBehaviour:
   _selectThunderWeapon: {fileID: 11400000, guid: 901cf1bd9e21d434093045942c8ec7f2,
     type: 2}
   _selectWaterWeapon: {fileID: 11400000, guid: 4980ac6ca323bff479727c5da571412e, type: 2}
+  _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
+  _weapon: {fileID: 114056692977926234}
 --- !u!114 &114839179600429066
 MonoBehaviour:
   m_ObjectHideFlags: 1

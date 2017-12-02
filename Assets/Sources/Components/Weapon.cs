@@ -4,38 +4,31 @@ using UnityEngine;
 
 namespace Components {
 	public class Weapon : MonoBehaviour {
-		[SerializeField]
-		private List<WeaponData> _weapons;
-		[SerializeField]
+		public List<WeaponData> Weapons;
 		private int _selectedWeapon;
-		private List<Bullet> _bullets;
+		[SerializeField]
+		private BulletsPool _bulletsPool;
 		private Transform _transform;
 		private List<Bullet> _bulletsToShoot;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
 			_bulletsToShoot = new List<Bullet>();
-
-			// Pooling
-			_bullets = new List<Bullet>();
-			foreach (var weapon in _weapons) {
-				for (var i = 0; i < weapon.MaxBullets; i++) {
-					var bullet = (Bullet) Instantiate(weapon.BulletPrefab);
-					bullet.gameObject.SetActive(false);
-					_bullets.Add(bullet);
-				}
-			}
 		}
 
 		private Bullet GetBullet() {
-			var bulletArrayOffset = 0;
-			for (var i = 0; i < _selectedWeapon; i++) {
-				bulletArrayOffset += _weapons[i].MaxBullets;
+			if (!_bulletsPool.PoolSetupDone) {
+				return null;
 			}
 
-			for (var i = 0 + bulletArrayOffset; i < _bullets.Count; i++) {
-				var bullet = _bullets[i];
-				if (!bullet.gameObject.activeInHierarchy && i < bulletArrayOffset + _weapons[_selectedWeapon].MaxBullets)
+			var bulletArrayOffset = 0;
+			for (var i = 0; i < _selectedWeapon; i++) {
+				bulletArrayOffset += Weapons[i].MaxBullets;
+			}
+
+			for (var i = 0 + bulletArrayOffset; i < _bulletsPool.Bullets.Length; i++) {
+				var bullet = _bulletsPool.Bullets[i];
+				if (!bullet.gameObject.activeInHierarchy && i < bulletArrayOffset + Weapons[_selectedWeapon].MaxBullets)
 					return bullet;
 			}
 			return null;
@@ -43,6 +36,36 @@ namespace Components {
 
 		public void SelectWeapon(int index) {
 			_selectedWeapon = index;
+		}
+
+		public void EnemyShoot(EnemyData enemyData) {
+			_bulletsToShoot.Clear();
+
+			if (enemyData.ShootingPattern != null) {
+				foreach (var spreadTypeOffset in enemyData.ShootingPattern.Offsets) {
+					var bullet = GetBullet();
+					if (bullet == null)
+						continue;
+
+					bullet.Sin = enemyData.ShootingPattern.Sin;
+					bullet.SinCoef.y = enemyData.ShootingPattern.VelocityCoef * spreadTypeOffset.y;
+					bullet.SinCoef.x = spreadTypeOffset.x;
+
+					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
+					bullet.StartingVelocity.y = spreadTypeOffset.y * enemyData.ShootingPattern.VelocityCoef;
+					bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
+					bullet.StartingVelocity.Normalize();
+					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
+					bullet.gameObject.SetActive(true);
+					_bulletsToShoot.Add(bullet);
+				}
+
+			}
+
+			foreach (var bullet in _bulletsToShoot) {
+				bullet.StartingVelocity.x *= -1f;
+				bullet.ShootTheBullet();
+			}
 		}
 
 		public void Shoot(PlayerData playerData) {
@@ -70,14 +93,15 @@ namespace Components {
 
 					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
 					bullet.StartingVelocity.y = spreadTypeOffset.y * playerData.SpreadType.VelocityCoef;
-					bullet.StartingVelocity.x = _weapons[_selectedWeapon].BulletVelocity;
+					bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
 					bullet.StartingVelocity.Normalize();
-					bullet.StartingVelocity *= _weapons[_selectedWeapon].BulletVelocity;
+					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
 					bullet.gameObject.SetActive(true);
 					_bulletsToShoot.Add(bullet);
 				}
 
 			}
+
 			foreach (var bullet in _bulletsToShoot) {
 				bullet.ShootTheBullet();
 			}
