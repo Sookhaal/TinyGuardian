@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Sources.Data;
+using Data;
 using UnityEngine;
 
-namespace Assets.Sources.Components {
+namespace Components {
 	public class Weapon : MonoBehaviour {
 		[SerializeField]
 		private List<WeaponData> _weapons;

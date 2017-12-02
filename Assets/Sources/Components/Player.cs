@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Data;
 using UnityEngine;
 
-namespace Assets.Sources.Components {
+namespace Components {
 	public class Player : MonoBehaviour {
 		[SerializeField]
 		private FloatData _timeBetweenShot;

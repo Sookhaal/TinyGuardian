@@ -1,10 +1,13 @@
+using Data;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-	public GameStateData GameStateData;
-	public GameEvent LoadSplash;
+namespace Components {
+	public class GameManager : MonoBehaviour {
+		public GameStateData GameStateData;
+		public GameEvent LoadSplash;
 
-	private void Start() {
-		GameStateData.UpdateState();
+		private void Start() {
+			GameStateData.UpdateState();
+		}
 	}
 }

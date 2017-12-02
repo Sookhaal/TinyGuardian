@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using Assets.Sources.Data;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Sources.Components {
+namespace Components {
 	public class Bullet : MonoBehaviour {
 		public Vector2 StartingVelocity;
 		public bool Sin;

@@ -1,7 +1,7 @@
-﻿using Assets.Sources.Components;
+﻿using Components;
 using UnityEngine;
 
-namespace Assets.Sources.Data {
+namespace Data {
 	[CreateAssetMenu(fileName = "WeaponData", menuName = "Data/WeaponData", order = 0)]
 	public class WeaponData : ScriptableObject {
 		public BulletType BulletType;
