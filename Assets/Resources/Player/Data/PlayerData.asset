@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd16b184c2c755c4faa23cea04ddc65b, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  SpreadTypeStart: {fileID: 11400000, guid: 717f8b64c7701b14ab85190bb48bd2e0, type: 2}
-  SpreadType: {fileID: 11400000, guid: 717f8b64c7701b14ab85190bb48bd2e0, type: 2}
+  SpreadTypeStart: {fileID: 11400000, guid: 81d7473ba2b1cd94b9577872a8161ae2, type: 2}
+  SpreadType: {fileID: 11400000, guid: 81d7473ba2b1cd94b9577872a8161ae2, type: 2}

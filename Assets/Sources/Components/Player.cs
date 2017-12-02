@@ -35,11 +35,13 @@ namespace Assets.Sources.Components {
 			_input.x = Input.GetAxis("Horizontal") * _maxSpeed.Value;
 			_input.y = Input.GetAxis("Vertical") * _maxSpeed.Value;
 
-			if (Input.GetButton("Space") && _canShoot) {
+			//if (Input.GetButton("Space") && _canShoot) {
+			if (_canShoot) {
 				_playerShoot.Raise();
 				_canShoot = false;
 				StartCoroutine(RateLimiter());
 			}
+			//}
 
 			if (Input.GetButtonDown("SelectEarthWeapon")) {
 				_selectEarthWeapon.Raise();

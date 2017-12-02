@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: WaterWeapon
   m_EditorClassIdentifier: 
   BulletType: {fileID: 11400000, guid: 879c5ed3a8e663c48b3b357342815e48, type: 2}
-  MaxBullets: 64
+  MaxBullets: 256
   BulletPrefab: {fileID: 114354808312809922, guid: dafd720fdfb4d07429e829d32489e428,
     type: 2}
+  BulletVelocity: 10

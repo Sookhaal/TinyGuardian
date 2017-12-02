@@ -64,8 +64,15 @@ namespace Assets.Sources.Components {
 					if (bullet == null)
 						continue;
 
-					bullet.transform.position = _transform.position + spreadTypeOffset;
-					bullet.StartingVelocity.y = spreadTypeOffset.y;
+					bullet.Sin = playerData.SpreadType.Sin;
+					bullet.SinCoef.y = playerData.SpreadType.VelocityCoef * spreadTypeOffset.y;
+					bullet.SinCoef.x = spreadTypeOffset.x;
+
+					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
+					bullet.StartingVelocity.y = spreadTypeOffset.y * playerData.SpreadType.VelocityCoef;
+					bullet.StartingVelocity.x = _weapons[_selectedWeapon].BulletVelocity;
+					bullet.StartingVelocity.Normalize();
+					bullet.StartingVelocity *= _weapons[_selectedWeapon].BulletVelocity;
 					bullet.gameObject.SetActive(true);
 					_bulletsToShoot.Add(bullet);
 				}

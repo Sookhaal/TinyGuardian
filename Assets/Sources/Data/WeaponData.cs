@@ -7,5 +7,6 @@ namespace Assets.Sources.Data {
 		public BulletType BulletType;
 		public int MaxBullets;
 		public Bullet BulletPrefab;
+		public float BulletVelocity;
 	}
 }
