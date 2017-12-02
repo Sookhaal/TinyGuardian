@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Assets.Sources.Components {
 	public class Player : MonoBehaviour {
+		[SerializeField]
+		private FloatData _timeBetweenShot;
 		[SerializeField]
 		private FloatData _maxSpeed;
 		[SerializeField]
@@ -20,6 +23,7 @@ namespace Assets.Sources.Components {
 		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
 		private Vector2 _input;
+		private bool _canShoot = true;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
@@ -31,8 +35,10 @@ namespace Assets.Sources.Components {
 			_input.x = Input.GetAxis("Horizontal") * _maxSpeed.Value;
 			_input.y = Input.GetAxis("Vertical") * _maxSpeed.Value;
 
-			if (Input.GetButtonDown("Space")) {
+			if (Input.GetButton("Space") && _canShoot) {
 				_playerShoot.Raise();
+				_canShoot = false;
+				StartCoroutine(RateLimiter());
 			}
 
 			if (Input.GetButtonDown("SelectEarthWeapon")) {
@@ -50,6 +56,11 @@ namespace Assets.Sources.Components {
 			if (Input.GetButtonDown("SelectWaterWeapon")) {
 				_selectWaterWeapon.Raise();
 			}
+		}
+
+		private IEnumerator RateLimiter() {
+			yield return new WaitForSeconds(_timeBetweenShot.Value);
+			_canShoot = true;
 		}
 
 		private void FixedUpdate() {

@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa970f22de7f8f1479e976e12024969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeBetweenShot: {fileID: 11400000, guid: 5a804328dcec53440a1761bd012afbaf, type: 2}
   _maxSpeed: {fileID: 11400000, guid: b1d4ecc6ae5f588409a73e0066564959, type: 2}
   _playerShoot: {fileID: 11400000, guid: e3c670f35ada86c44b3fd1a60b40be30, type: 2}
   _selectEarthWeapon: {fileID: 11400000, guid: 176deab585d086e448a314cad2c7613e, type: 2}

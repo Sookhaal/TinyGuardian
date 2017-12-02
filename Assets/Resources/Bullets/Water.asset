@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813ed009099b7604f926fa24fa000121, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  BonusDamageType: {fileID: 11400000, guid: 7c939b27b1300cd48b5baa714a494e7d, type: 2}

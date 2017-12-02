@@ -9,8 +9,6 @@ namespace Assets.Sources.Components {
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 		}
 
-		public void SetBulletGraphics() { }
-
 		public void ShootTheBullet() {
 			_rigidbody2D.velocity = new Vector2(10f, 0f);
 		}

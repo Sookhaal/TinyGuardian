@@ -20,7 +20,6 @@ namespace Assets.Sources.Components {
 			foreach (var weapon in _weapons) {
 				for (var i = 0; i < weapon.MaxBullets; i++) {
 					var bullet = (Bullet) Instantiate(weapon.BulletPrefab);
-					bullet.SetBulletGraphics();
 					bullet.gameObject.SetActive(false);
 					_bullets.Add(bullet);
 				}

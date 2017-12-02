@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813ed009099b7604f926fa24fa000121, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
+  BonusDamageType: {fileID: 11400000, guid: cc88e89efaac98a4a920f08cc64b20c3, type: 2}

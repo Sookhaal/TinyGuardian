@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: ThunderWeapon
   m_EditorClassIdentifier: 
   BulletType: {fileID: 11400000, guid: cc88e89efaac98a4a920f08cc64b20c3, type: 2}
-  MaxBullets: 8
+  MaxBullets: 64
   BulletPrefab: {fileID: 114354808312809922, guid: e1067d67d7aeab24493b81db3bfd7335,
     type: 2}
