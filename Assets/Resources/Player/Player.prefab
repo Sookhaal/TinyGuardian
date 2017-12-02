@@ -203,7 +203,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d1834d973ad434c49bdf562acb5aa611,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: Assets.Sources.Data.PlayerData, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: Data.PlayerData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
