@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68536987ce93564da72e1a677cd23ca, type: 3}
+  m_Name: ShootEnemis8DataThunder
+  m_EditorClassIdentifier: 
+  EnemyType: {fileID: 11400000, guid: cc88e89efaac98a4a920f08cc64b20c3, type: 2}
+  StartingHP: 1
+  TimeBetweenShot: 2
+  ShootingPattern: {fileID: 11400000, guid: 0a31c10df078374488869e8891536b7f, type: 2}
+  SelectedWeapon: 3

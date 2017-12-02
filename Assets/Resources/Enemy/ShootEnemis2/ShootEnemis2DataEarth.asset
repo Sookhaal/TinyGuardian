@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68536987ce93564da72e1a677cd23ca, type: 3}
+  m_Name: ShootEnemis2DataEarth
+  m_EditorClassIdentifier: 
+  EnemyType: {fileID: 11400000, guid: 8d8530d1d94576f4da1d28724cb0d147, type: 2}
+  StartingHP: 1
+  TimeBetweenShot: 0.3
+  ShootingPattern: {fileID: 11400000, guid: 268407205e4fc6a429cf8e6b71f92cfe, type: 2}
+  SelectedWeapon: 0
