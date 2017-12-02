@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Components {
 	public class Player : MonoBehaviour {
+		public PlayerData PlayerData;
 		[SerializeField]
 		private FloatData _timeBetweenShot;
 		[SerializeField]

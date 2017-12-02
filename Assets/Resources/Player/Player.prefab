@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114832055986634402}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -181,7 +181,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
-  _selectedWeapon: 1
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114207413118353404
 MonoBehaviour:
@@ -307,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa970f22de7f8f1479e976e12024969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: d1834d973ad434c49bdf562acb5aa611, type: 2}
   _timeBetweenShot: {fileID: 11400000, guid: 5a804328dcec53440a1761bd012afbaf, type: 2}
   _maxSpeed: {fileID: 11400000, guid: b1d4ecc6ae5f588409a73e0066564959, type: 2}
   _playerShoot: {fileID: 11400000, guid: e3c670f35ada86c44b3fd1a60b40be30, type: 2}

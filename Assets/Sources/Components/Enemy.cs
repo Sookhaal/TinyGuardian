@@ -20,10 +20,14 @@ namespace Components {
 
 		private void Update() {
 			if (_canShoot) {
-				Weapon.EnemyShoot(EnemyData);
+				Weapon.Shoot(EnemyData.ShootingPattern, true);
 				_canShoot = false;
 				StartCoroutine(RateLimiter());
 			}
+		}
+
+		public void Die() {
+			Destroy(gameObject);
 		}
 
 		private IEnumerator RateLimiter() {

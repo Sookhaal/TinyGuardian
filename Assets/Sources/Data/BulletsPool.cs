@@ -32,6 +32,7 @@ namespace Data {
 					index++;
 				}
 			}
+
 			PoolSetupDone = true;
 		}
 	}

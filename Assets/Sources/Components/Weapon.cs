@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Data;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Components {
 		private BulletsPool _bulletsPool;
 		private Transform _transform;
 		private List<Bullet> _bulletsToShoot;
+		private bool _canShoot = true;
+		private SpreadType _spreadType;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
@@ -38,73 +41,90 @@ namespace Components {
 			_selectedWeapon = index;
 		}
 
-		public void EnemyShoot(EnemyData enemyData) {
+		public void Shoot(SpreadType spreadType, bool comeFromEnemy) {
+			_spreadType = spreadType;
 			_bulletsToShoot.Clear();
+			if (!_canShoot) {
+				return;
+			}
+			_canShoot = false;
 
-			if (enemyData.ShootingPattern != null) {
-				foreach (var spreadTypeOffset in enemyData.ShootingPattern.Offsets) {
+			switch (spreadType.Type) {
+			case Spreads.Straight:
+			case Spreads.Sin:
+			case Spreads.Bomb:
+				foreach (var spreadTypeOffset in spreadType.Offsets) {
 					var bullet = GetBullet();
 					if (bullet == null)
 						continue;
 
-					bullet.Sin = enemyData.ShootingPattern.Sin;
-					bullet.SinCoef.y = enemyData.ShootingPattern.VelocityCoef * spreadTypeOffset.y;
+					bullet.Sin = spreadType.Sin;
+					bullet.SinCoef.y = spreadType.VelocityCoef * spreadTypeOffset.y;
 					bullet.SinCoef.x = spreadTypeOffset.x;
 
 					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
-					bullet.StartingVelocity.y = spreadTypeOffset.y * enemyData.ShootingPattern.VelocityCoef;
+					bullet.StartingVelocity.y = spreadTypeOffset.y * spreadType.VelocityCoef;
 					bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
 					bullet.StartingVelocity.Normalize();
 					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
 					bullet.gameObject.SetActive(true);
+					bullet.CanHurtPlayer = comeFromEnemy;
+					if (spreadType.Type == Spreads.Bomb) {
+						StartCoroutine(ExplodeBomb(bullet));
+					}
 					_bulletsToShoot.Add(bullet);
 				}
+				break;
+			case Spreads.Explosion:
+				foreach (var spreadTypeOffset in spreadType.Offsets) {
+					var bullet = GetBullet();
+					if (bullet == null)
+						continue;
 
+					bullet.transform.position = _transform.position;
+					bullet.StartingVelocity = spreadTypeOffset;
+					bullet.StartingVelocity.Normalize();
+					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
+					bullet.gameObject.SetActive(true);
+					bullet.CanHurtPlayer = comeFromEnemy;
+					_bulletsToShoot.Add(bullet);
+				}
+				break;
+			default:
+				break;
 			}
 
 			foreach (var bullet in _bulletsToShoot) {
-				bullet.StartingVelocity.x *= -1f;
+				if (comeFromEnemy) {
+					bullet.StartingVelocity.x *= -1f;
+				}
 				bullet.ShootTheBullet();
 			}
+
+			StartCoroutine(RateLimiter(spreadType.RateOfFire.Value));
 		}
 
 		public void Shoot(PlayerData playerData) {
-			_bulletsToShoot.Clear();
+			Shoot(playerData.SpreadType, false);
+		}
 
-			if (playerData.SpreadType == null) {
-				var bullet = GetBullet();
-				if (bullet == null)
-					return;
+		private IEnumerator RateLimiter(float seconds) {
+			yield return new WaitForSeconds(seconds);
+			_canShoot = true;
+		}
 
-				bullet.transform.position = _transform.position;
-				bullet.gameObject.SetActive(true);
-				_bulletsToShoot.Add(bullet);
-			}
-
-			if (playerData.SpreadType != null) {
-				foreach (var spreadTypeOffset in playerData.SpreadType.Offsets) {
-					var bullet = GetBullet();
-					if (bullet == null)
-						continue;
-
-					bullet.Sin = playerData.SpreadType.Sin;
-					bullet.SinCoef.y = playerData.SpreadType.VelocityCoef * spreadTypeOffset.y;
-					bullet.SinCoef.x = spreadTypeOffset.x;
-
-					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
-					bullet.StartingVelocity.y = spreadTypeOffset.y * playerData.SpreadType.VelocityCoef;
-					bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
-					bullet.StartingVelocity.Normalize();
-					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
-					bullet.gameObject.SetActive(true);
-					_bulletsToShoot.Add(bullet);
-				}
-
-			}
-
-			foreach (var bullet in _bulletsToShoot) {
-				bullet.ShootTheBullet();
-			}
+		private IEnumerator ExplodeBomb(Bullet bullet) {
+			var go = new GameObject();
+			var dupeWeapon = (Weapon) go.AddComponent(typeof(Weapon));
+			dupeWeapon.Weapons = Weapons;
+			dupeWeapon._spreadType = _spreadType;
+			dupeWeapon._bulletsPool = _bulletsPool;
+			dupeWeapon._selectedWeapon = _selectedWeapon;
+			yield return new WaitForSeconds(1f);
+			bullet.gameObject.SetActive(false);
+			dupeWeapon._transform.position = bullet.transform.position;
+			dupeWeapon.Shoot(dupeWeapon._spreadType.ExplosionPattern, true);
+			Destroy(dupeWeapon.gameObject);
 		}
 	}
 }

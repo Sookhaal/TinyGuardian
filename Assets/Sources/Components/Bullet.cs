@@ -5,6 +5,7 @@ namespace Components {
 		public Vector2 StartingVelocity;
 		public bool Sin;
 		public Vector2 SinCoef;
+		public bool CanHurtPlayer;
 
 		private Vector3 _startingPosition;
 		private Rigidbody2D _rigidbody2D;
@@ -39,6 +40,26 @@ namespace Components {
 		private void OnTriggerExit2D(Collider2D collider) {
 			if (collider.tag == "Boundaries") {
 				gameObject.SetActive(false);
+			}
+
+			switch (CanHurtPlayer) {
+			case true:
+				if (collider.tag == "Player") {
+					var player = collider.GetComponent<Player>();
+					player.PlayerData.HP.ApplyChange(-1f);
+				}
+				break;
+			case false:
+				if (collider.tag == "Enemy") {
+					var enemy = collider.GetComponent<Enemy>();
+					enemy.HP -= 1.1f;
+					if (enemy.HP < 0f) {
+						enemy.Die();
+					}
+				}
+				break;
+			default:
+				break;
 			}
 		}
 	}

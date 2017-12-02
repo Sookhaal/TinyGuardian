@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0b36a8773ae9144a8d9bd11afd1fd9, type: 3}
   m_Name: Sin1
   m_EditorClassIdentifier: 
+  Type: 1
   Offsets:
   - {x: 1, y: 1, z: 0}
   - {x: 1.5, y: -1, z: 0}
@@ -18,3 +19,4 @@ MonoBehaviour:
   - {x: 2, y: -0.68, z: 0}
   VelocityCoef: 10
   Sin: 1
+  RateOfFire: {fileID: 11400000, guid: d8be52b072a8ece4ca829f7e4a50832b, type: 2}

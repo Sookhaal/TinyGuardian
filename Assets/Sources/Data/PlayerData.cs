@@ -5,6 +5,7 @@ namespace Data {
 	public class PlayerData : ScriptableObject {
 		public SpreadType SpreadTypeStart;
 		public SpreadType SpreadType;
+		public FloatData HP;
 
 		private void OnEnable() {
 			SpreadType = SpreadTypeStart;
