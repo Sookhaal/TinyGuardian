@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Assets.Sources.Data;
 using UnityEngine;
 
@@ -11,9 +10,11 @@ namespace Assets.Sources.Components {
 		private int _selectedWeapon;
 		private List<Bullet> _bullets;
 		private Transform _transform;
+		private List<Bullet> _bulletsToShoot;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
+			_bulletsToShoot = new List<Bullet>();
 
 			// Pooling
 			_bullets = new List<Bullet>();
@@ -44,14 +45,35 @@ namespace Assets.Sources.Components {
 			_selectedWeapon = index;
 		}
 
-		public void Shoot() {
-			var bullet = GetBullet();
-			if (bullet == null)
-				return;
+		public void Shoot(PlayerData playerData) {
+			_bulletsToShoot.Clear();
 
-			bullet.transform.position = _transform.position;
-			bullet.gameObject.SetActive(true);
-			bullet.ShootTheBullet();
+			if (playerData.SpreadType == null) {
+				var bullet = GetBullet();
+				if (bullet == null)
+					return;
+
+				bullet.transform.position = _transform.position;
+				bullet.gameObject.SetActive(true);
+				_bulletsToShoot.Add(bullet);
+			}
+
+			if (playerData.SpreadType != null) {
+				foreach (var spreadTypeOffset in playerData.SpreadType.Offsets) {
+					var bullet = GetBullet();
+					if (bullet == null)
+						continue;
+
+					bullet.transform.position = _transform.position + spreadTypeOffset;
+					bullet.StartingVelocity.y = spreadTypeOffset.y;
+					bullet.gameObject.SetActive(true);
+					_bulletsToShoot.Add(bullet);
+				}
+
+			}
+			foreach (var bullet in _bulletsToShoot) {
+				bullet.ShootTheBullet();
+			}
 		}
 	}
 }
