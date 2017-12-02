@@ -19,6 +19,7 @@ namespace Data {
 					Blocks[block.ScoreThreshold.Value] = new List<EnemyBlock> { block };
 				}
 			}
+
 			Blocks.Add(float.MaxValue, null);
 		}
 	}

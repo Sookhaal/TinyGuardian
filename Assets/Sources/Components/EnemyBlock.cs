@@ -31,7 +31,7 @@ namespace Components {
 		private float GetNearest() {
 			var thresholds = _blocksData.Blocks.Keys.ToList();
 			var right = thresholds.Where(x => x >= _score.Score.Value).OrderBy(x => x - _score.Score.Value).First();
-			var left = thresholds.Where(x => x < _score.Score.Value).OrderBy(x => Mathf.Abs(_score.Score.Value - x)).First();
+			var left = thresholds.Where(x => x < _score.Score.Value).OrderBy(x => Mathf.Abs(_score.Score.Value - x)).FirstOrDefault();
 			return right.Equals(left) ? left : Mathf.Min(right, left);
 		}
 
