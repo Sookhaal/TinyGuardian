@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7972ba2f9478c1d4ba31d93130327c2f, type: 3}
+  m_Name: GlobalStateData
+  m_EditorClassIdentifier: 
+  NextScreen: {fileID: 11400000, guid: f522984e6c2b3b443a1bd2410373f5ff, type: 2}
+  CurrentScreen: {fileID: 11400000, guid: f522984e6c2b3b443a1bd2410373f5ff, type: 2}
+  FadeEvent: {fileID: 11400000, guid: 5d6752cdb00abe94aaea39e588693dc0, type: 2}
+  _startNextScreen: {fileID: 11400000, guid: f522984e6c2b3b443a1bd2410373f5ff, type: 2}
+  _startCurrentScreen: {fileID: 11400000, guid: 7047eb60e5bb1a54786a2f2b4ce58df1,
+    type: 2}
