@@ -10,11 +10,13 @@ using UnityEngine;
 
 namespace Components {
 	public class Enemy : MonoBehaviour {
+		public Enemy FollowThisGuy;
 		public EnemyData EnemyData;
 		public float HP;
+		public float Delay;
 
 		private Transform _transform;
-		private bool _canShoot = true;
+		private bool _canShoot;
 		[SerializeField]
 		private Weapon Weapon;
 		[SerializeField]
@@ -32,15 +34,24 @@ namespace Components {
 			_checkBlockDone = (GameEvent) Resources.Load("EnemyBlocks/Events/CheckBlockDone");
 			HP = EnemyData.StartingHP;
 			Weapon.SelectWeapon(EnemyData.SelectedWeapon);
-			DoThePath();
+			if (!FollowThisGuy) {
+				DoThePath();
+			} else {
+				_basePosition = FollowThisGuy.transform.position;
+				_pathData = FollowThisGuy._pathData;
+				Delay += FollowThisGuy.Delay;
+				DoThePath();
+			}
+
+			StartCoroutine(WaitDelay());
 		}
 
 		private void Update() {
-			if (_canShoot) {
-				Weapon.Shoot(EnemyData.ShootingPattern, true);
-				_canShoot = false;
-				StartCoroutine(RateLimiter());
-			}
+			if (!_canShoot)
+				return;
+			Weapon.Shoot(EnemyData.ShootingPattern, true);
+			_canShoot = false;
+			StartCoroutine(RateLimiter());
 		}
 
 		public void DoThePath() {
@@ -53,10 +64,9 @@ namespace Components {
 				_waypoints[i] = _basePosition + _pathData.Waypoints[i];
 			}
 
-			if (_pathData) {
-				_pathTweener = _transform.DOPath(_waypoints, _pathData.Duration, _pathData.PathType)
-					.OnComplete(Die);
-			}
+			_pathTweener = _transform.DOPath(_waypoints, _pathData.Duration, _pathData.PathType)
+				.SetDelay(Delay)
+				.OnComplete(Die);
 		}
 
 		public void AddScore(bool useBonus = false) {
@@ -78,6 +88,11 @@ namespace Components {
 			if (collider.tag == "Boundaries") {
 				gameObject.SetActive(false);
 			}
+		}
+
+		private IEnumerator WaitDelay() {
+			yield return new WaitForSeconds(Delay);
+			_canShoot = true;
 		}
 
 		private IEnumerator RateLimiter() {
