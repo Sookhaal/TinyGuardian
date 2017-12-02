@@ -16,6 +16,8 @@ namespace Data {
 		Straight,
 		Sin,
 		Bomb,
-		Explosion
+		Explosion,
+		LockOn,
+		AutoAim
 	}
 }

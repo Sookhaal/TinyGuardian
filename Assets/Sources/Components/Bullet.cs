@@ -1,4 +1,5 @@
 ﻿using Data;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Components {
@@ -8,6 +9,8 @@ namespace Components {
 		public bool Sin;
 		public Vector2 SinCoef;
 		public bool CanHurtPlayer;
+		public GameObject LockOnTarget;
+		public float BulletVelocity;
 
 		private Vector3 _startingPosition;
 		private Rigidbody2D _rigidbody2D;
@@ -25,6 +28,14 @@ namespace Components {
 		}
 
 		private void FixedUpdate() {
+			if (LockOnTarget) {
+				StartingVelocity = LockOnTarget.transform.position - _transform.position;
+				StartingVelocity.Normalize();
+				StartingVelocity *= BulletVelocity;
+				_rigidbody2D.velocity = StartingVelocity;
+				return;
+			}
+
 			if (!Sin) {
 				return;
 			}

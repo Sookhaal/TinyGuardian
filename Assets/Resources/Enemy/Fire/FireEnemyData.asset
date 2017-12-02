@@ -14,7 +14,7 @@ MonoBehaviour:
   EnemyType: {fileID: 11400000, guid: 7c939b27b1300cd48b5baa714a494e7d, type: 2}
   StartingHP: 1
   TimeBetweenShot: 0.3
-  ShootingPattern: {fileID: 11400000, guid: 81d7473ba2b1cd94b9577872a8161ae2, type: 2}
+  ShootingPattern: {fileID: 11400000, guid: d13f15f3cdc27964cabb38bd3f16b1a7, type: 2}
   SelectedWeapon: 1
   ScoreValue: 10
   BonusScore: 20

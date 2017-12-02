@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
@@ -41,6 +42,27 @@ namespace Components {
 			_selectedWeapon = index;
 		}
 
+		private GameObject GetClosestEnemy() {
+			var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+			if (enemies.Length == 0) {
+				return null;
+			}
+
+			var closest = enemies[0];
+			var distance = Mathf.Infinity;
+			var position = _transform.position;
+			foreach (var enemy in enemies) {
+				var diff = enemy.transform.position - position;
+				var curDistance = diff.sqrMagnitude;
+				if (curDistance >= distance)
+					continue;
+				closest = enemy;
+				distance = curDistance;
+			}
+
+			return closest;
+		}
+
 		public void Shoot(SpreadType spreadType, bool comeFromEnemy) {
 			_spreadType = spreadType;
 			_bulletsToShoot.Clear();
@@ -50,9 +72,7 @@ namespace Components {
 			_canShoot = false;
 
 			switch (spreadType.Type) {
-			case Spreads.Straight:
-			case Spreads.Sin:
-			case Spreads.Bomb:
+			default:
 				foreach (var spreadTypeOffset in spreadType.Offsets) {
 					var bullet = GetBullet();
 					if (bullet == null)
@@ -63,8 +83,27 @@ namespace Components {
 					bullet.SinCoef.x = spreadTypeOffset.x;
 
 					bullet.transform.position = _transform.position + (bullet.Sin ? Vector3.zero : spreadTypeOffset);
-					bullet.StartingVelocity.y = spreadTypeOffset.y * spreadType.VelocityCoef;
-					bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
+					switch (spreadType.Type) {
+					case Spreads.LockOn:
+						bullet.LockOnTarget = GetClosestEnemy();
+						if (bullet.LockOnTarget) {
+							bullet.StartingVelocity = bullet.LockOnTarget.transform.position - _transform.position;
+							bullet.BulletVelocity = Weapons[_selectedWeapon].BulletVelocity;
+						} else {
+							bullet.StartingVelocity.y = spreadTypeOffset.y * spreadType.VelocityCoef;
+							bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
+						}
+						break;
+					case Spreads.AutoAim:
+						var target = comeFromEnemy ? GameObject.FindGameObjectWithTag("Player") : GetClosestEnemy();
+						bullet.StartingVelocity = target.transform.position - _transform.position;
+						bullet.BulletVelocity = Weapons[_selectedWeapon].BulletVelocity;
+						break;
+					default:
+						bullet.StartingVelocity.y = spreadTypeOffset.y * spreadType.VelocityCoef;
+						bullet.StartingVelocity.x = Weapons[_selectedWeapon].BulletVelocity;
+						break;
+					}
 					bullet.StartingVelocity.Normalize();
 					bullet.StartingVelocity *= Weapons[_selectedWeapon].BulletVelocity;
 					bullet.gameObject.SetActive(true);
@@ -90,12 +129,10 @@ namespace Components {
 					_bulletsToShoot.Add(bullet);
 				}
 				break;
-			default:
-				break;
 			}
 
 			foreach (var bullet in _bulletsToShoot) {
-				if (comeFromEnemy) {
+				if (comeFromEnemy && spreadType.Type != Spreads.AutoAim && spreadType.Type != Spreads.LockOn) {
 					bullet.StartingVelocity.x *= -1f;
 				}
 				bullet.ShootTheBullet();
