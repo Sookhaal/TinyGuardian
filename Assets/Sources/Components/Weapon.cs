@@ -70,7 +70,7 @@ namespace Components {
 					bullet.gameObject.SetActive(true);
 					bullet.CanHurtPlayer = comeFromEnemy;
 					if (spreadType.Type == Spreads.Bomb) {
-						StartCoroutine(ExplodeBomb(bullet));
+						StartCoroutine(ExplodeBomb(bullet, bullet.CanHurtPlayer));
 					}
 					_bulletsToShoot.Add(bullet);
 				}
@@ -113,7 +113,7 @@ namespace Components {
 			_canShoot = true;
 		}
 
-		private IEnumerator ExplodeBomb(Bullet bullet) {
+		private IEnumerator ExplodeBomb(Bullet bullet, bool canHurtPlayer) {
 			var go = new GameObject();
 			var dupeWeapon = (Weapon) go.AddComponent(typeof(Weapon));
 			dupeWeapon.Weapons = Weapons;
@@ -123,7 +123,7 @@ namespace Components {
 			yield return new WaitForSeconds(1f);
 			bullet.gameObject.SetActive(false);
 			dupeWeapon._transform.position = bullet.transform.position;
-			dupeWeapon.Shoot(dupeWeapon._spreadType.ExplosionPattern, true);
+			dupeWeapon.Shoot(dupeWeapon._spreadType.ExplosionPattern, canHurtPlayer);
 			Destroy(dupeWeapon.gameObject);
 		}
 	}
