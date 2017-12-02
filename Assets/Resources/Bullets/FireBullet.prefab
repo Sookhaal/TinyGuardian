@@ -89,9 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848c39fef9c85054089d1c5d7b3820f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletType: {fileID: 11400000, guid: 7c939b27b1300cd48b5baa714a494e7d, type: 2}
   StartingVelocity: {x: 0, y: 0}
   Sin: 0
   SinCoef: {x: 0, y: 0}
+  CanHurtPlayer: 0
 --- !u!212 &212763321815937892
 SpriteRenderer:
   m_ObjectHideFlags: 1

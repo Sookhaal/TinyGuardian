@@ -8,5 +8,7 @@ namespace Data {
 		public float TimeBetweenShot = 0.3f;
 		public SpreadType ShootingPattern;
 		public int SelectedWeapon;
+		public float ScoreValue;
+		public float BonusScore;
 	}
 }

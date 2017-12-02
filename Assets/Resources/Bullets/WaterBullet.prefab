@@ -131,3 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848c39fef9c85054089d1c5d7b3820f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletType: {fileID: 11400000, guid: 879c5ed3a8e663c48b3b357342815e48, type: 2}
+  StartingVelocity: {x: 0, y: 0}
+  Sin: 0
+  SinCoef: {x: 0, y: 0}
+  CanHurtPlayer: 0

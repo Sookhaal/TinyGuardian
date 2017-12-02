@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using Data;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -21,10 +22,14 @@ namespace Components {
 		private Vector3 _basePosition;
 		private TweenerCore<Vector3, Path, PathOptions> _pathTweener;
 		private Vector3[] _waypoints;
+		private ScoreData _score;
+		private GameEvent _checkBlockDone;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
 			_basePosition = _transform.position;
+			_score = (ScoreData) Resources.Load("Global/Data/ScoreData");
+			_checkBlockDone = (GameEvent) Resources.Load("EnemyBlocks/Events/CheckBlockDone");
 			HP = EnemyData.StartingHP;
 			Weapon.SelectWeapon(EnemyData.SelectedWeapon);
 			DoThePath();
@@ -49,12 +54,30 @@ namespace Components {
 			}
 
 			if (_pathData) {
-				_pathTweener = _transform.DOPath(_waypoints, _pathData.Duration, _pathData.PathType);
+				_pathTweener = _transform.DOPath(_waypoints, _pathData.Duration, _pathData.PathType)
+					.OnComplete(Die);
 			}
 		}
 
+		public void AddScore(bool useBonus = false) {
+			if (useBonus) {
+				_score.Score.ApplyChange((EnemyData.ScoreValue + EnemyData.BonusScore) * _score.Multiplier);
+			} else {
+				_score.Score.ApplyChange(EnemyData.ScoreValue * _score.Multiplier);
+			}
+
+			Die();
+		}
+
 		public void Die() {
+			_checkBlockDone.Raise();
 			Destroy(gameObject);
+		}
+
+		private void OnTriggerExit2D(Collider2D collider) {
+			if (collider.tag == "Boundaries") {
+				gameObject.SetActive(false);
+			}
 		}
 
 		private IEnumerator RateLimiter() {

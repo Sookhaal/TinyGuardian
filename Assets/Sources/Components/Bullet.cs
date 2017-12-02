@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Data;
+using UnityEngine;
 
 namespace Components {
 	public class Bullet : MonoBehaviour {
+		public BulletType BulletType;
 		public Vector2 StartingVelocity;
 		public bool Sin;
 		public Vector2 SinCoef;
@@ -54,7 +56,7 @@ namespace Components {
 					var enemy = collider.GetComponent<Enemy>();
 					enemy.HP -= 1.1f;
 					if (enemy.HP < 0f) {
-						enemy.Die();
+						enemy.AddScore(enemy.EnemyData.EnemyType.BonusDamageType == BulletType);
 					}
 				}
 				break;
