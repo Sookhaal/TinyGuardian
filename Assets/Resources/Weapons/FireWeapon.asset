@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aa2d98d8ac791499435e22a5eff3e7, type: 3}
+  m_Name: FireWeapon
+  m_EditorClassIdentifier: 
+  BulletType: {fileID: 11400000, guid: 7c939b27b1300cd48b5baa714a494e7d, type: 2}
+  MaxBullets: 32
+  BulletPrefab: {fileID: 114354808312809922, guid: 4d942bbce81ec5f439f9d3dea3b14e2d,
+    type: 2}
