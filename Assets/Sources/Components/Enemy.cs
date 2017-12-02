@@ -10,7 +10,6 @@ using UnityEngine;
 
 namespace Components {
 	public class Enemy : MonoBehaviour {
-		public Enemy FollowThisGuy;
 		public EnemyData EnemyData;
 		public float HP;
 		public float Delay;
@@ -34,13 +33,7 @@ namespace Components {
 			_checkBlockDone = (GameEvent) Resources.Load("EnemyBlocks/Events/CheckBlockDone");
 			HP = EnemyData.StartingHP;
 			Weapon.SelectWeapon(EnemyData.SelectedWeapon);
-			if (!FollowThisGuy) {
-				DoThePath();
-			} else {
-				_basePosition = FollowThisGuy.transform.position;
-				Delay += FollowThisGuy.Delay;
-				DoThePath();
-			}
+			DoThePath();
 
 			StartCoroutine(WaitDelay());
 		}
