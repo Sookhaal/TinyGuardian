@@ -6,6 +6,17 @@ namespace Assets.Sources.Components {
 		private FloatData _maxSpeed;
 		[SerializeField]
 		private GameEvent _playerShoot;
+
+		// Weapon Selection
+		[SerializeField]
+		private GameEvent _selectEarthWeapon;
+		[SerializeField]
+		private GameEvent _selectFireWeapon;
+		[SerializeField]
+		private GameEvent _selectThunderWeapon;
+		[SerializeField]
+		private GameEvent _selectWaterWeapon;
+
 		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
 		private Vector2 _input;
@@ -22,6 +33,22 @@ namespace Assets.Sources.Components {
 
 			if (Input.GetButtonDown("Space")) {
 				_playerShoot.Raise();
+			}
+
+			if (Input.GetButtonDown("SelectEarthWeapon")) {
+				_selectEarthWeapon.Raise();
+			}
+
+			if (Input.GetButtonDown("SelectFireWeapon")) {
+				_selectFireWeapon.Raise();
+			}
+
+			if (Input.GetButtonDown("SelectThunderWeapon")) {
+				_selectThunderWeapon.Raise();
+			}
+
+			if (Input.GetButtonDown("SelectWaterWeapon")) {
+				_selectWaterWeapon.Raise();
 			}
 		}
 

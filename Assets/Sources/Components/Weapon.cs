@@ -6,7 +6,9 @@ using UnityEngine;
 namespace Assets.Sources.Components {
 	public class Weapon : MonoBehaviour {
 		[SerializeField]
-		private WeaponData _weaponData;
+		private List<WeaponData> _weapons;
+		[SerializeField]
+		private int _selectedWeapon;
 		private List<Bullet> _bullets;
 		private Transform _transform;
 
@@ -15,15 +17,32 @@ namespace Assets.Sources.Components {
 
 			// Pooling
 			_bullets = new List<Bullet>();
-			for (var i = 0; i < _weaponData.MaxBullets; i++) {
-				var bullet = (Bullet) Instantiate(_weaponData.BulletPrefab);
-				bullet.gameObject.SetActive(false);
-				_bullets.Add(bullet);
+			foreach (var weapon in _weapons) {
+				for (var i = 0; i < weapon.MaxBullets; i++) {
+					var bullet = (Bullet) Instantiate(weapon.BulletPrefab);
+					bullet.SetBulletGraphics();
+					bullet.gameObject.SetActive(false);
+					_bullets.Add(bullet);
+				}
 			}
 		}
 
 		private Bullet GetBullet() {
-			return _bullets.FirstOrDefault(bullet => !bullet.gameObject.activeInHierarchy);
+			var bulletArrayOffset = 0;
+			for (var i = 0; i < _selectedWeapon; i++) {
+				bulletArrayOffset += _weapons[i].MaxBullets;
+			}
+
+			for (var i = 0 + bulletArrayOffset; i < _bullets.Count; i++) {
+				var bullet = _bullets[i];
+				if (!bullet.gameObject.activeInHierarchy && i < bulletArrayOffset + _weapons[_selectedWeapon].MaxBullets)
+					return bullet;
+			}
+			return null;
+		}
+
+		public void SelectWeapon(int index) {
+			_selectedWeapon = index;
 		}
 
 		public void Shoot() {
