@@ -12,6 +12,10 @@ namespace Data {
 		public void SetExposure() {
 			ColorGrading grading;
 			PostProcessProfile.TryGetSettings<ColorGrading>(out grading);
+			if (!grading) {
+				return;
+			}
+
 			grading.postExposure.Override(NewExposure);
 		}
 

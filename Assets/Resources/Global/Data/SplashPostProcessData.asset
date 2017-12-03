@@ -8,10 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42027ae0e78482479af7e9057d0e5b7, type: 3}
-  m_Name: backgroundPath
+  m_Script: {fileID: 11500000, guid: 28eda4f0dafbdbd4db2acbb7f63130ad, type: 3}
+  m_Name: SplashPostProcessData
   m_EditorClassIdentifier: 
-  Waypoints:
-  - {x: -80, y: 0, z: 0}
-  Duration: 2
-  PathType: 0
+  PostProcessProfile: {fileID: 11400000, guid: eef8c5959f9331745a37901e2a0d3c46, type: 2}
+  DefaultExposure: 0
+  NewExposure: 0
