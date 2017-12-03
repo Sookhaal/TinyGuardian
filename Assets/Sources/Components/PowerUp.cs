@@ -9,28 +9,53 @@ namespace Components {
 		public PowerupData PowerupData;
 		public GameEvent DoPowerupEvent;
 		public GameEvent DoPowerdownEvent;
+		public int ProgressionIndex;
 
 		private void OnTriggerEnter2D(Collider2D collider) {
 			if (collider.tag != "Player")
 				return;
 
 			var player = collider.GetComponent<Player>();
+
 			for (var i = 0; i < player.PlayerData.SpreadTypes.Count; i++) {
 				if (!player.PlayerData.SpreadTypes[i]) {
 					continue;
 				}
-
-				if (player.PlayerData.SpreadTypes[i].Type != PowerupData.SpreadProgression[0].Type) {
+				if (player.PlayerData.SpreadTypes[i].Type != PowerupData.SpreadProgression[ProgressionIndex].Type) {
 					if (i == player.PlayerData.SpreadTypes.Count) {
-						player.PlayerData.SpreadTypes.Add(PowerupData.SpreadProgression[0]);
+						player.PlayerData.SpreadTypes.Add(PowerupData.SpreadProgression[ProgressionIndex]);
 					}
 
 					continue;
 				}
-				player.PlayerData.SpreadTypes[i] = PowerupData.SpreadProgression[0];
+				for (var progressionIndex = 0; progressionIndex < PowerupData.SpreadProgression.Count; progressionIndex++) {
+					if (player.PlayerData.SpreadTypes[i] == PowerupData.SpreadProgression[progressionIndex]) {
+						ProgressionIndex = progressionIndex;
+					}
+				}
+				switch (PowerupType) {
+				case PowerupType.UP:
+					ProgressionIndex++;
+					break;
+				case PowerupType.DOWN:
+					ProgressionIndex--;
+					break;
+				default:
+					break;
+				}
+
+				if (ProgressionIndex >= PowerupData.SpreadProgression.Count) {
+					ProgressionIndex = PowerupData.SpreadProgression.Count - 1;
+				}
+
+				if (ProgressionIndex < 0) {
+					ProgressionIndex = 0;
+				}
+
+				player.PlayerData.SpreadTypes[i] = PowerupData.SpreadProgression[ProgressionIndex];
 			}
 
-			player.PlayerData.SpreadTypes[0] = PowerupData.SpreadProgression[0];
+			player.PlayerData.SpreadTypes[0] = PowerupData.SpreadProgression[ProgressionIndex];
 			switch (PowerupType) {
 			case PowerupType.UP:
 				DoPowerupEvent.Raise();
