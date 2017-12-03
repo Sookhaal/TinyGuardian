@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114239013991493096}
   - component: {fileID: 114574636547132100}
   m_Layer: 0
-  m_Name: Block5Fire_Water 1
+  m_Name: Block5Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

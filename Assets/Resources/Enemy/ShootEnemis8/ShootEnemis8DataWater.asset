@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: ShootEnemis8DataWater
   m_EditorClassIdentifier: 
   EnemyType: {fileID: 11400000, guid: 879c5ed3a8e663c48b3b357342815e48, type: 2}
-  StartingHP: 1
+  StartingHP: 10
   TimeBetweenShot: 3
   ShootingPattern: {fileID: 11400000, guid: 0a31c10df078374488869e8891536b7f, type: 2}
   SelectedWeapon: 2
