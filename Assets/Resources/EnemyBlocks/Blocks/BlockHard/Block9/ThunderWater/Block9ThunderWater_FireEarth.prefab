@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 114795100133787234}
   - component: {fileID: 114597029595350240}
   m_Layer: 0
-  m_Name: Block9ThunderWater_Fire 1
+  m_Name: Block9ThunderWater_FireEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
