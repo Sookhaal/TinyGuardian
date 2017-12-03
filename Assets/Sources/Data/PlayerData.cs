@@ -7,6 +7,7 @@ namespace Data {
 		public List<SpreadType> SpreadTypesStart;
 		public List<SpreadType> SpreadTypes;
 		public FloatData HP;
+		public FloatData MaxSpeed;
 
 		private void OnEnable() {
 			SpreadTypes = new List<SpreadType>();
