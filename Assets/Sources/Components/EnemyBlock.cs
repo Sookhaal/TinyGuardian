@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using Data;
 using UnityEngine;
@@ -7,6 +8,8 @@ using Random = System.Random;
 namespace Components {
 	public class EnemyBlock : MonoBehaviour {
 		public FloatDataReference ScoreThreshold;
+		[SerializeField]
+		private float _delay;
 		private ScoreData _score;
 		private int _childrenLeft;
 		private BlocksData _blocksData;
@@ -36,6 +39,11 @@ namespace Components {
 		}
 
 		public void SpawnBlock() {
+			StartCoroutine(SpawnBlockAfterDelay());
+		}
+
+		public IEnumerator SpawnBlockAfterDelay() {
+			yield return new WaitForSeconds(_delay);
 			if (_counter >= _blocksData.Blocks[GetNearest()].Count) {
 				_blocksData.Blocks[GetNearest()] = _blocksData.Blocks[GetNearest()].OrderBy(x => _rng.Next()).ToList();
 				_counter = 0;
