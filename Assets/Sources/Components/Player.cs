@@ -39,8 +39,8 @@ namespace Components {
 		}
 
 		private void Update() {
-			_input.x = Input.GetAxis("Horizontal") * PlayerData.MaxSpeed.Value;
-			_input.y = Input.GetAxis("Vertical") * PlayerData.MaxSpeed.Value;
+			_input.x = Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value;
+			_input.y = Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value;
 
 			//if (Input.GetButton("Space") && _canShoot) {
 			if (_canShoot) {

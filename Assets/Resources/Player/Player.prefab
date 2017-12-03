@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 61926241814255092}
   - component: {fileID: 114962543291981712}
   - component: {fileID: 212024009031119282}
+  - component: {fileID: 114320170924643208}
+  - component: {fileID: 114460639446185112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -781,6 +783,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
   SpreadType: 5
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
+--- !u!114 &114320170924643208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025834991713114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef6c379bf46d14ca93e20b0593c27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3c67ad3d2822d5d4c9d31cb6dd5d09d0, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d1834d973ad434c49bdf562acb5aa611, type: 2}
+        m_MethodName: AddToCurrentSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114331026166514606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -963,6 +993,34 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114460639446185112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025834991713114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef6c379bf46d14ca93e20b0593c27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bef7563230e20e04398971148bf9c9bc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d1834d973ad434c49bdf562acb5aa611, type: 2}
+        m_MethodName: AddToCurrentSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1382,7 +1440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerData: {fileID: 11400000, guid: d1834d973ad434c49bdf562acb5aa611, type: 2}
   _timeBetweenShot: {fileID: 11400000, guid: 5a804328dcec53440a1761bd012afbaf, type: 2}
-  _maxSpeed: {fileID: 11400000, guid: b1d4ecc6ae5f588409a73e0066564959, type: 2}
   _playerShoot: {fileID: 11400000, guid: e3c670f35ada86c44b3fd1a60b40be30, type: 2}
   _selectEarthWeapon: {fileID: 11400000, guid: 176deab585d086e448a314cad2c7613e, type: 2}
   _selectFireWeapon: {fileID: 11400000, guid: 7fd8dc16847a0c849818355225c5e941, type: 2}
