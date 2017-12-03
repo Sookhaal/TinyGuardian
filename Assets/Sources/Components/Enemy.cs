@@ -64,8 +64,10 @@ namespace Components {
 		public void AddScore(bool useBonus = false) {
 			if (useBonus) {
 				_score.Score.ApplyChange((EnemyData.ScoreValue + EnemyData.BonusScore) * _score.Multiplier);
+				_score.Multiplier++;
 			} else {
 				_score.Score.ApplyChange(EnemyData.ScoreValue * _score.Multiplier);
+				_score.Multiplier = 1f;
 			}
 
 			Die();

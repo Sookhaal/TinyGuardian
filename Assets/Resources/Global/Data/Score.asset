@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 0
-  Value: 150
+  StartingValue: 100
+  Value: 100
