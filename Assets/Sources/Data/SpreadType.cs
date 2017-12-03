@@ -10,6 +10,7 @@ namespace Data {
 		public bool Sin;
 		public FloatData RateOfFire;
 		public SpreadType ExplosionPattern;
+		public float Damage;
 	}
 
 	public enum Spreads {

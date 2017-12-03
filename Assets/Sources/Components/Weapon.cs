@@ -134,6 +134,7 @@ namespace Components {
 			}
 
 			foreach (var bullet in _bulletsToShoot) {
+				bullet.Damage = spreadType.Damage;
 				if (comeFromEnemy && spreadType.Type != Spreads.AutoAim && spreadType.Type != Spreads.LockOn) {
 					bullet.StartingVelocity.x *= -1f;
 				}

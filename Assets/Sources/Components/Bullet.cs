@@ -11,6 +11,7 @@ namespace Components {
 		public bool CanHurtPlayer;
 		public GameObject LockOnTarget;
 		public float BulletVelocity;
+		public float Damage;
 
 		private Vector3 _startingPosition;
 		private Rigidbody2D _rigidbody2D;
@@ -63,14 +64,14 @@ namespace Components {
 			case true:
 				if (collider.tag == "Player") {
 					var player = collider.GetComponent<Player>();
-					player.PlayerData.HP.ApplyChange(-1f);
+					player.PlayerData.HP.ApplyChange(-Damage);
 					gameObject.SetActive(false);
 				}
 				break;
 			case false:
 				if (collider.tag == "Enemy") {
 					var enemy = collider.GetComponent<Enemy>();
-					enemy.HP -= 1.1f;
+					enemy.HP -= enemy.EnemyData.EnemyType.BonusDamageType == BulletType ? Damage * 2f : Damage;
 					if (enemy.HP < 0f) {
 						enemy.AddScore(enemy.EnemyData.EnemyType.BonusDamageType == BulletType);
 					}

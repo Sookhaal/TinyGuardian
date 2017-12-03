@@ -9,8 +9,6 @@ namespace Components {
 		[SerializeField]
 		private FloatData _timeBetweenShot;
 		[SerializeField]
-		private FloatData _maxSpeed;
-		[SerializeField]
 		private GameEvent _playerShoot;
 
 		// Weapon Selection
@@ -41,8 +39,8 @@ namespace Components {
 		}
 
 		private void Update() {
-			_input.x = Input.GetAxis("Horizontal") * _maxSpeed.Value;
-			_input.y = Input.GetAxis("Vertical") * _maxSpeed.Value;
+			_input.x = Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value;
+			_input.y = Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value;
 
 			//if (Input.GetButton("Space") && _canShoot) {
 			if (_canShoot) {
