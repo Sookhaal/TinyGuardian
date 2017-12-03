@@ -13,4 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpreadTypeStart: {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
   SpreadType: {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
+  SpreadTypesStart:
+  - {fileID: 0}
+  SpreadTypes:
+  - {fileID: 0}
   HP: {fileID: 11400000, guid: f137dee59ffa8ec49a6e6bdb021ffb1b, type: 2}

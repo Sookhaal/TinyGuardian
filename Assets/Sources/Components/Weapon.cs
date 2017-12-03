@@ -142,7 +142,13 @@ namespace Components {
 		}
 
 		public void Shoot(PlayerData playerData) {
-			Shoot(playerData.SpreadType, false);
+			foreach (var spreadType in playerData.SpreadTypes) {
+				if (spreadType == null) {
+					continue;
+				}
+
+				Shoot(spreadType, false);
+			}
 		}
 
 		private IEnumerator RateLimiter(float seconds) {
