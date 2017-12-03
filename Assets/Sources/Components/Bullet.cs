@@ -71,9 +71,14 @@ namespace Components {
 			case false:
 				if (collider.tag == "Enemy") {
 					var enemy = collider.GetComponent<Enemy>();
-					enemy.HP -= enemy.EnemyData.EnemyType.BonusDamageType == BulletType ? Damage * 2f : Damage;
+					if (BulletType.BonusDamageType == enemy.EnemyData.EnemyType) {
+						enemy.HP -= Damage * 2f;
+					} else {
+						enemy.HP -= Damage;
+					}
+
 					if (enemy.HP < 0f) {
-						enemy.AddScore(enemy.EnemyData.EnemyType.BonusDamageType == BulletType);
+						enemy.AddScore(BulletType.BonusDamageType == enemy.EnemyData.EnemyType);
 					}
 					gameObject.SetActive(false);
 				}
