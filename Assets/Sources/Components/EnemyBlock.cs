@@ -15,19 +15,23 @@ namespace Components {
 		private BlocksData _blocksData;
 		private int _counter;
 		private readonly Random _rng = new Random();
+		private GameEvent _spawnBlockEvent;
 
 		private void Awake() {
 			_childrenLeft = GetComponentsInChildren<Enemy>().Length;
 			_score = Resources.Load<ScoreData>("Global/Data/ScoreData");
 			_blocksData = Resources.Load<BlocksData>("EnemyBlocks/AllBlocks");
 			_blocksData.Blocks[GetNearest()] = _blocksData.Blocks[GetNearest()].OrderBy(x => _rng.Next()).ToList();
+			_spawnBlockEvent = Resources.Load<GameEvent>("EnemyBlocks/Events/SpawnBlock");
 		}
 
 		public void CheckBlockIsDone() {
 			_childrenLeft--;
 			if (_childrenLeft != 0)
 				return;
+
 			SpawnBlock();
+			_spawnBlockEvent.Raise();
 		}
 
 		private float GetNearest() {

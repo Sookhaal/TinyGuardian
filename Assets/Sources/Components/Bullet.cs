@@ -16,10 +16,12 @@ namespace Components {
 		private Vector3 _startingPosition;
 		private Rigidbody2D _rigidbody2D;
 		private Transform _transform;
+		private SpriteRenderer _renderer;
 
 		private void Awake() {
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_transform = GetComponent<Transform>();
+			_renderer = GetComponent<SpriteRenderer>();
 			StartingVelocity = new Vector2(0f, 0f);
 		}
 
@@ -51,6 +53,9 @@ namespace Components {
 			var v = _rigidbody2D.velocity;
 			var angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
 			_transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			if (!_renderer.IsVisibleFrom(Camera.main)) {
+				gameObject.SetActive(false);
+			}
 		}
 
 		private void OnTriggerExit2D(Collider2D collider) {

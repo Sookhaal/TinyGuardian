@@ -69,19 +69,13 @@ namespace Components {
 				_score.Score.ApplyChange(EnemyData.ScoreValue * _score.Multiplier);
 				_score.Multiplier = 1f;
 			}
-
-			Die();
+			_checkBlockDone.Raise();
+			Destroy(gameObject);
 		}
 
 		public void Die() {
 			_checkBlockDone.Raise();
 			Destroy(gameObject);
-		}
-
-		private void OnTriggerExit2D(Collider2D collider) {
-			if (collider.tag == "Boundaries") {
-				gameObject.SetActive(false);
-			}
 		}
 
 		private IEnumerator WaitDelay() {
