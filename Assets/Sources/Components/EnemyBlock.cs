@@ -28,7 +28,6 @@ namespace Components {
 			if (_childrenLeft != 0)
 				return;
 			SpawnBlock();
-			Destroy(gameObject);
 		}
 
 		private float GetNearest() {
@@ -51,6 +50,7 @@ namespace Components {
 
 			Instantiate(_blocksData.Blocks[GetNearest()][_counter]);
 			_counter++;
+			Destroy(gameObject);
 		}
 	}
 }
