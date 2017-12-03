@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4464704271270308}
   - component: {fileID: 114763998154879132}
-  - component: {fileID: 114150342625275446}
   m_Layer: 0
   m_Name: BlockManager
   m_TagString: Untagged
@@ -41,34 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114150342625275446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147786974970122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcef6c379bf46d14ca93e20b0593c27a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e3440dd6c7072e542af56fe177705dff, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114763998154879132}
-        m_MethodName: SpawnBlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114763998154879132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,3 +55,4 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 0
     Data: {fileID: 0}
+  _delay: 0
