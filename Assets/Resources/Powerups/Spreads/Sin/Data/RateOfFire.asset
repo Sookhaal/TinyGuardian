@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: RateOfFire
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 0.1
-  Value: 0
+  StartingValue: 0.2
+  Value: 0.2
