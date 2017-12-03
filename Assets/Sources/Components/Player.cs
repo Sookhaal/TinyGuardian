@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Components {
 	public class Player : MonoBehaviour {
@@ -36,6 +37,7 @@ namespace Components {
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_input = new Vector2();
 			_bulletsPool.SetupPool();
+			SceneManager.LoadSceneAsync("GameUI", LoadSceneMode.Additive);
 		}
 
 		private void Update() {

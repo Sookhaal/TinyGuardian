@@ -400,7 +400,8 @@ Prefab:
         type: 2}
       propertyPath: _pathData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: f244890ee8a9b3b46b3d92e02a33a516,
+        type: 2}
     - target: {fileID: 1627300619840784, guid: 121e0b1a0b283cc4fa01b8ca4082f23e, type: 2}
       propertyPath: m_IsActive
       value: 1
