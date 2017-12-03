@@ -71,7 +71,7 @@ namespace Components {
 			case false:
 				if (collider.tag == "Enemy") {
 					var enemy = collider.GetComponent<Enemy>();
-					enemy.HP -= Damage;
+					enemy.HP -= enemy.EnemyData.EnemyType.BonusDamageType == BulletType ? Damage * 2f : Damage;
 					if (enemy.HP < 0f) {
 						enemy.AddScore(enemy.EnemyData.EnemyType.BonusDamageType == BulletType);
 					}
