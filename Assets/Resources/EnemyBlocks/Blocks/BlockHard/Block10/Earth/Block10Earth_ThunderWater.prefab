@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 114784992678524578}
   - component: {fileID: 114037682923789622}
   m_Layer: 0
-  m_Name: Block8Earth_ThunderWater
+  m_Name: Block10Earth_ThunderWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

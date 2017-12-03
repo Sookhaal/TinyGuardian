@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 114526603895591148}
   - component: {fileID: 114227879462176322}
   m_Layer: 0
-  m_Name: Block8Earth_ThunderFire
+  m_Name: Block10Earth_ThunderFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

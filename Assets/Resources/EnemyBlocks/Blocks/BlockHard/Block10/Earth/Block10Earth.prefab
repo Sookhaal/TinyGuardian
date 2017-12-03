@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 114979277587391700}
   - component: {fileID: 114460378495042924}
   m_Layer: 0
-  m_Name: Block8Earth
+  m_Name: Block10Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

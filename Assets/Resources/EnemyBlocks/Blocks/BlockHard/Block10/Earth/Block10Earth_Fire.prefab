@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114467744437277160}
   - component: {fileID: 114141170103076630}
   m_Layer: 0
-  m_Name: Block8Earth_Fire
+  m_Name: Block10Earth_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

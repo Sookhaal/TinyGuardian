@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 114758188078422226}
   - component: {fileID: 114009442975597674}
   m_Layer: 0
-  m_Name: Block8Earth_FireWater
+  m_Name: Block10Earth_FireWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

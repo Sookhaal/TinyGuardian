@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114599508852650588}
   - component: {fileID: 114766209011546948}
   m_Layer: 0
-  m_Name: Block8Earth_FireThunder
+  m_Name: Block10Earth_FireThunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

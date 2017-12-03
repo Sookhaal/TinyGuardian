@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 114135322744653852}
   - component: {fileID: 114662610577471310}
   m_Layer: 0
-  m_Name: Block8Earth_EarthThunder
+  m_Name: Block10Earth_EarthThunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

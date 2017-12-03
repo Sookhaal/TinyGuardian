@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 114085671077477972}
   - component: {fileID: 114252251759779700}
   m_Layer: 0
-  m_Name: Block10EarthFire_WaterFIre
+  m_Name: Block10EarthFire_Waterearth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

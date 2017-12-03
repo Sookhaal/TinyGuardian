@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 114057404552468192}
   - component: {fileID: 114277296427096872}
   m_Layer: 0
-  m_Name: Block8Earth_Waterthunder
+  m_Name: Block810Earth_Waterthunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

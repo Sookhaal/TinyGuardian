@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 114954918604549078}
   - component: {fileID: 114619763252124962}
   m_Layer: 0
-  m_Name: Block8Earth_ThunderEarth
+  m_Name: Block10Earth_ThunderEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
