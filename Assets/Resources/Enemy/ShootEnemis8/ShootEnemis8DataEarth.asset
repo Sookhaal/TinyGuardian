@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyType: {fileID: 11400000, guid: 8d8530d1d94576f4da1d28724cb0d147, type: 2}
   StartingHP: 1
-  TimeBetweenShot: 2
+  TimeBetweenShot: 3
   ShootingPattern: {fileID: 11400000, guid: 0a31c10df078374488869e8891536b7f, type: 2}
   SelectedWeapon: 0
   ScoreValue: 150

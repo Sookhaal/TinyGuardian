@@ -344,6 +344,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 35, y: 25}
   m_EdgeRadius: 0
+--- !u!1 &1453596764 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1025834991713114, guid: 807862874335a5648a26a2b49238eb87,
+    type: 2}
+  m_PrefabInternal: {fileID: 1680287846}
+--- !u!58 &1453596765
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453596764}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.0772176, y: 0.4378478}
+  serializedVersion: 2
+  m_Radius: 1.4592743
 --- !u!1001 &1680287846
 Prefab:
   m_ObjectHideFlags: 0
@@ -383,7 +403,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114032856505760256, guid: 807862874335a5648a26a2b49238eb87,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61926241814255092, guid: 807862874335a5648a26a2b49238eb87,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.8480029
+      objectReference: {fileID: 0}
+    - target: {fileID: 61926241814255092, guid: 807862874335a5648a26a2b49238eb87,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.54242706
+      objectReference: {fileID: 0}
+    - target: {fileID: 61926241814255092, guid: 807862874335a5648a26a2b49238eb87,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.1857147
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 61926241814255092, guid: 807862874335a5648a26a2b49238eb87, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 807862874335a5648a26a2b49238eb87, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2014518648

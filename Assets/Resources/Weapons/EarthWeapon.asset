@@ -11,8 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91aa2d98d8ac791499435e22a5eff3e7, type: 3}
   m_Name: EarthWeapon
   m_EditorClassIdentifier: 
-  BulletType: {fileID: 11400000, guid: 8d8530d1d94576f4da1d28724cb0d147, type: 2}
   MaxBullets: 256
   BulletPrefab: {fileID: 114354808312809922, guid: b068e5edab64499439b52f18e1afe1d6,
     type: 2}
-  BulletVelocity: 10
+  BulletVelocity: 5
