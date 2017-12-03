@@ -15,7 +15,7 @@ MonoBehaviour:
   Offsets:
   - {x: 0, y: 0, z: 0}
   VelocityCoef: 5
-  Sin: 1
+  Sin: 0
   RateOfFire: {fileID: 11400000, guid: 999a33b1d1a4bb842821df7a02de2ec8, type: 2}
   ExplosionPattern: {fileID: 11400000, guid: 4ebdae038a4392d4a9b598b0db95c0b4, type: 2}
-  Damage: 2
+  Damage: 4

@@ -269,6 +269,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114498056802401828
 MonoBehaviour:
@@ -314,6 +315,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114698953043454240
 MonoBehaviour:
@@ -345,7 +347,7 @@ MonoBehaviour:
   ScoreThreshold:
     UseConstant: 0
     ConstantValue: 0
-    Data: {fileID: 11400000, guid: 0a4ac1724db32ac41b387b4395bd904b, type: 2}
+    Data: {fileID: 11400000, guid: d8027e5fbf80b624c8eeb43c10ee7d1e, type: 2}
   _delay: 4
 --- !u!212 &212582679595960988
 SpriteRenderer:
