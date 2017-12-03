@@ -33,7 +33,8 @@ namespace Components {
 			_checkBlockDone = (GameEvent) Resources.Load("EnemyBlocks/Events/CheckBlockDone");
 			HP = EnemyData.StartingHP;
 			Weapon.SelectWeapon(EnemyData.SelectedWeapon);
-			DoThePath();
+			if (_pathData)
+				DoThePath();
 
 			StartCoroutine(WaitDelay());
 		}

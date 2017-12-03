@@ -45,7 +45,7 @@ namespace Components {
 
 			StartingVelocity.y = Mathf.Cos(_startingPosition.x - transform.position.x * SinCoef.x) * SinCoef.y;
 
-			StartingVelocity.x = SinCoef.x;
+			StartingVelocity.x = SinCoef.x * Mathf.Sign(StartingVelocity.x);
 			_rigidbody2D.velocity = StartingVelocity;
 		}
 
