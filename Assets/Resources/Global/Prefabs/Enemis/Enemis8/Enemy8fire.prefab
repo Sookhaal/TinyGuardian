@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyData: {fileID: 11400000, guid: 6878c83a4089c044bb7f8e6596c0935a, type: 2}
-  HP: 2
+  HP: 20
   Delay: 0
   Weapon: {fileID: 114714797147326876}
   _pathData: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!212 &212920439813119776
 SpriteRenderer:

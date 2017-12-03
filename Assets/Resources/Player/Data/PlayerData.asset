@@ -13,13 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpreadTypesStart:
   - {fileID: 11400000, guid: dd8f1d05bdcc868448ef7cb7682c0257, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d13f15f3cdc27964cabb38bd3f16b1a7, type: 2}
   - {fileID: 0}
   SpreadTypes:
   - {fileID: 11400000, guid: dd8f1d05bdcc868448ef7cb7682c0257, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3852ea457f4933e489305b53f3f9efa5, type: 2}
+  - {fileID: 11400000, guid: 6b45c39e50da9fb4a9a7579fd87b594d, type: 2}
   HP: {fileID: 11400000, guid: f137dee59ffa8ec49a6e6bdb021ffb1b, type: 2}
-  CurrentSpeed: {fileID: 11400000, guid: b1d4ecc6ae5f588409a73e0066564959, type: 2}
-  MinimumSpeed: {fileID: 11400000, guid: 970de0cd1195c4c40a18f48e073a448a, type: 2}
-  MaximumSpeed: {fileID: 11400000, guid: 07ce90bc8d552e64fa7746eb34d196fd, type: 2}
