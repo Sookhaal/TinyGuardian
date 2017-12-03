@@ -54,12 +54,15 @@ namespace Components {
 			if (collider.tag == "Boundaries") {
 				gameObject.SetActive(false);
 			}
+		}
 
+		private void OnTriggerEnter2D(Collider2D collider) {
 			switch (CanHurtPlayer) {
 			case true:
 				if (collider.tag == "Player") {
 					var player = collider.GetComponent<Player>();
 					player.PlayerData.HP.ApplyChange(-1f);
+					gameObject.SetActive(false);
 				}
 				break;
 			case false:
@@ -69,6 +72,7 @@ namespace Components {
 					if (enemy.HP < 0f) {
 						enemy.AddScore(enemy.EnemyData.EnemyType.BonusDamageType == BulletType);
 					}
+					gameObject.SetActive(false);
 				}
 				break;
 			default:
