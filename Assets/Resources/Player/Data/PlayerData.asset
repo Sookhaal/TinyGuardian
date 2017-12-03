@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   SpreadTypesStart:
-  - {fileID: 11400000, guid: dd8f1d05bdcc868448ef7cb7682c0257, type: 2}
+  - {fileID: 11400000, guid: 6997a532ba14fb041bb60052a43de91c, type: 2}
   SpreadTypes:
-  - {fileID: 11400000, guid: dd8f1d05bdcc868448ef7cb7682c0257, type: 2}
+  - {fileID: 11400000, guid: 6fd19a0d5daf5b54fa2dd966457c18e3, type: 2}
   HP: {fileID: 11400000, guid: f137dee59ffa8ec49a6e6bdb021ffb1b, type: 2}
   CurrentSpeed: {fileID: 11400000, guid: b1d4ecc6ae5f588409a73e0066564959, type: 2}
   MinimumSpeed: {fileID: 11400000, guid: 970de0cd1195c4c40a18f48e073a448a, type: 2}

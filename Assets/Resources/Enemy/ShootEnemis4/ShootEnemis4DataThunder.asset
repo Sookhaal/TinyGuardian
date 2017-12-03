@@ -16,5 +16,5 @@ MonoBehaviour:
   TimeBetweenShot: 1
   ShootingPattern: {fileID: 11400000, guid: 621b37f7fc6dc5243806743fd9373d83, type: 2}
   SelectedWeapon: 3
-  ScoreValue: 15
-  BonusScore: 15
+  ScoreValue: 40
+  BonusScore: 40

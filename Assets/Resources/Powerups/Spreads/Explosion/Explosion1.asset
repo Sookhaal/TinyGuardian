@@ -25,3 +25,4 @@ MonoBehaviour:
   Sin: 0
   RateOfFire: {fileID: 11400000, guid: 8b17ca71c5f02ce489b48bdc5318aa57, type: 2}
   ExplosionPattern: {fileID: 0}
+  Damage: 2
