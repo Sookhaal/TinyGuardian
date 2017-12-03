@@ -10,6 +10,7 @@ namespace Data {
 		public FloatData CurrentSpeed;
 		public FloatData MinimumSpeed;
 		public FloatData MaximumSpeed;
+		public int SelectedWeapon;
 
 		private void OnEnable() {
 			SpreadTypes = new List<SpreadType>();

@@ -44,6 +44,10 @@ namespace Components {
 			SceneManager.LoadSceneAsync("GameUI", LoadSceneMode.Additive);
 		}
 
+		private void Start() {
+			_selectEarthWeapon.Raise();
+		}
+
 		private void Update() {
 			_input.x = Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value;
 			_input.y = Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value;
@@ -56,18 +60,22 @@ namespace Components {
 
 			if (Input.GetButtonDown("SelectEarthWeapon")) {
 				_selectEarthWeapon.Raise();
+				PlayerData.SelectedWeapon = 0;
 			}
 
 			if (Input.GetButtonDown("SelectFireWeapon")) {
 				_selectFireWeapon.Raise();
+				PlayerData.SelectedWeapon = 1;
 			}
 
 			if (Input.GetButtonDown("SelectThunderWeapon")) {
 				_selectThunderWeapon.Raise();
+				PlayerData.SelectedWeapon = 3;
 			}
 
 			if (Input.GetButtonDown("SelectWaterWeapon")) {
 				_selectWaterWeapon.Raise();
+				PlayerData.SelectedWeapon = 2;
 			}
 		}
 
