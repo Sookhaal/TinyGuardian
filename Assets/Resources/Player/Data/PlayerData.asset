@@ -11,10 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd16b184c2c755c4faa23cea04ddc65b, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  SpreadTypeStart: {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
-  SpreadType: {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
   SpreadTypesStart:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3852ea457f4933e489305b53f3f9efa5, type: 2}
+  - {fileID: 11400000, guid: 82dfe714386f79443a5b958ae1c12f0b, type: 2}
+  - {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
   SpreadTypes:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3852ea457f4933e489305b53f3f9efa5, type: 2}
+  - {fileID: 11400000, guid: 82dfe714386f79443a5b958ae1c12f0b, type: 2}
+  - {fileID: 11400000, guid: 9516c50fb719f2f479ce2810037bb8c9, type: 2}
   HP: {fileID: 11400000, guid: f137dee59ffa8ec49a6e6bdb021ffb1b, type: 2}

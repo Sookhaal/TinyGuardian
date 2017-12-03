@@ -7,9 +7,11 @@ using UnityEngine;
 namespace Components {
 	public class Weapon : MonoBehaviour {
 		public List<WeaponData> Weapons;
-		private int _selectedWeapon;
+		public Spreads SpreadType;
+
 		[SerializeField]
 		private BulletsPool _bulletsPool;
+		private int _selectedWeapon;
 		private Transform _transform;
 		private List<Bullet> _bulletsToShoot;
 		private bool _canShoot = true;
@@ -143,7 +145,7 @@ namespace Components {
 
 		public void Shoot(PlayerData playerData) {
 			foreach (var spreadType in playerData.SpreadTypes) {
-				if (spreadType == null) {
+				if (spreadType == null || spreadType.Type != SpreadType) {
 					continue;
 				}
 
@@ -168,6 +170,16 @@ namespace Components {
 			dupeWeapon._transform.position = bullet.transform.position;
 			dupeWeapon.Shoot(dupeWeapon._spreadType.ExplosionPattern, canHurtPlayer);
 			Destroy(dupeWeapon.gameObject);
+		}
+
+		public void CheckHasPowerup(PlayerData playerData) {
+			foreach (var spreadType in playerData.SpreadTypes) {
+				if (spreadType.Type == SpreadType) {
+					gameObject.SetActive(true);
+					return;
+				}
+				gameObject.SetActive(false);
+			}
 		}
 	}
 }
