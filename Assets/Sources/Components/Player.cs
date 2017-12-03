@@ -7,6 +7,8 @@ namespace Components {
 	public class Player : MonoBehaviour {
 		public PlayerData PlayerData;
 		[SerializeField]
+		private Sprite[] _gogoSprites;
+		[SerializeField]
 		private FloatData _timeBetweenShot;
 		[SerializeField]
 		private GameEvent _playerShoot;
@@ -20,6 +22,7 @@ namespace Components {
 		private GameEvent _selectThunderWeapon;
 		[SerializeField]
 		private GameEvent _selectWaterWeapon;
+
 		[SerializeField]
 		private BulletsPool _bulletsPool;
 		[SerializeField]
@@ -27,12 +30,15 @@ namespace Components {
 
 		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
+		private SpriteRenderer _spriteRenderer;
 		private Vector2 _input;
 		private bool _canShoot = true;
+		private int _gogoFatness;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
+			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_input = new Vector2();
 			_bulletsPool.SetupPool();
 			SceneManager.LoadSceneAsync("GameUI", LoadSceneMode.Additive);
@@ -42,13 +48,11 @@ namespace Components {
 			_input.x = Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value;
 			_input.y = Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value;
 
-			//if (Input.GetButton("Space") && _canShoot) {
-			if (_canShoot) {
+			if (Input.GetButton("Space") && _canShoot) {
 				_playerShoot.Raise();
 				_canShoot = false;
 				StartCoroutine(RateLimiter());
 			}
-			//}
 
 			if (Input.GetButtonDown("SelectEarthWeapon")) {
 				_selectEarthWeapon.Raise();
@@ -74,6 +78,14 @@ namespace Components {
 
 		private void FixedUpdate() {
 			_rigidbody2D.velocity = _input;
+		}
+
+		public void FeedGogo(int amount) {
+			if (_gogoFatness + amount < 0 || _gogoFatness + amount >= _gogoSprites.Length) {
+				return;
+			}
+			_gogoFatness += amount;
+			_spriteRenderer.sprite = _gogoSprites[_gogoFatness];
 		}
 	}
 }
