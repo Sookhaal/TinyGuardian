@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114765659224750706}
   - component: {fileID: 114061681815860640}
   m_Layer: 0
-  m_Name: Block11Water_Thunder 1
+  m_Name: Block11Water_earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

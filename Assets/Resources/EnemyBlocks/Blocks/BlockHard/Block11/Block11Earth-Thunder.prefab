@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114341568411528612}
   - component: {fileID: 114522073125248706}
   m_Layer: 0
-  m_Name: Block11Earth-Fire 1
+  m_Name: Block11Earth-Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
