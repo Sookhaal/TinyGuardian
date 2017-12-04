@@ -16,7 +16,6 @@ namespace Components {
 			_rng = new Random();
 			_powerUps = Resources.LoadAll<PowerUp>("Powerups/Prefabs").ToList();
 			_powerUps = _powerUps.OrderBy(x => _rng.Next()).ToList();
-			print(_powerUps.Count);
 			_blockManager.SpawnBlock();
 		}
 

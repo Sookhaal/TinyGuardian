@@ -209,6 +209,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114232108216516096, guid: 93caff454fddf6042a21289f960038ff,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93caff454fddf6042a21289f960038ff, type: 2}
   m_IsPrefabParent: 0
@@ -293,7 +298,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1575087537}
   - component: {fileID: 1575087536}
-  - component: {fileID: 1575087535}
   - component: {fileID: 1575087534}
   - component: {fileID: 1575087533}
   m_Layer: 0
@@ -311,13 +315,6 @@ AudioListener:
   m_GameObject: {fileID: 1575087532}
   m_Enabled: 1
 --- !u!124 &1575087534
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1575087532}
-  m_Enabled: 1
---- !u!92 &1575087535
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
