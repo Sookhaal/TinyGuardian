@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waypoints:
   - {x: -2, y: 25, z: 0}
-  Duration: 8
+  Duration: 16
   PathType: 1

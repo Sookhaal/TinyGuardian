@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f68536987ce93564da72e1a677cd23ca, type: 3}
-  m_Name: ShootEnemis5DataFire
+  m_Name: ShootEnemisDataWater
   m_EditorClassIdentifier: 
-  EnemyType: {fileID: 11400000, guid: 7c939b27b1300cd48b5baa714a494e7d, type: 2}
-  StartingHP: 4
-  TimeBetweenShot: 3
-  ShootingPattern: {fileID: 11400000, guid: bcd7e7d5be93dcd439b4ac3311c5822d, type: 2}
-  SelectedWeapon: 1
-  ScoreValue: 50
-  BonusScore: 50
+  EnemyType: {fileID: 11400000, guid: 879c5ed3a8e663c48b3b357342815e48, type: 2}
+  StartingHP: 1
+  TimeBetweenShot: 1
+  ShootingPattern: {fileID: 11400000, guid: adb0179ffc68db44ebe3c0c21a56e7f5, type: 2}
+  SelectedWeapon: 2
+  ScoreValue: 10
+  BonusScore: 10

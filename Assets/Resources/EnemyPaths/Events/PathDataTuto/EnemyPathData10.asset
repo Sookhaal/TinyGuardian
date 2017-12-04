@@ -15,5 +15,5 @@ MonoBehaviour:
   - {x: -5, y: 0, z: 0}
   - {x: -2, y: -3, z: 0}
   - {x: 0, y: -6, z: 0}
-  Duration: 15
+  Duration: 20
   PathType: 1

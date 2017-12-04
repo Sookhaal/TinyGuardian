@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976c969a65ee370428105396997458e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: ecf841b6b8a3b554fb052d2317767835, type: 2}
+  EnemyData: {fileID: 11400000, guid: 47b392c6c31cd8645b8ee10671f9cf4b, type: 2}
   HP: 2
   Delay: 0.5
   Weapon: {fileID: 114669789159606248}
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyData: {fileID: 11400000, guid: a76d74b6a550c904db46159fc65a0411, type: 2}
   HP: 2
-  Delay: 1
+  Delay: 1.5
   Weapon: {fileID: 114485612143371096}
   _pathData: {fileID: 11400000, guid: cda5ef1855a7ac54b8c0f390b04f842c, type: 2}
 --- !u!114 &114140586282773130
@@ -595,6 +595,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114147325724300366
 MonoBehaviour:
@@ -607,9 +608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976c969a65ee370428105396997458e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: 4da376dadf1b9704ca2433ca4614f079, type: 2}
+  EnemyData: {fileID: 11400000, guid: 704bafb9345c7a64b8667a7ed60d45c4, type: 2}
   HP: 2
-  Delay: 2
+  Delay: 3
   Weapon: {fileID: 114501886135367834}
   _pathData: {fileID: 11400000, guid: cda5ef1855a7ac54b8c0f390b04f842c, type: 2}
 --- !u!114 &114397124804532230
@@ -656,6 +657,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114501886135367834
 MonoBehaviour:
@@ -673,6 +675,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114546614624777844
 MonoBehaviour:
@@ -685,9 +688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976c969a65ee370428105396997458e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: ecf841b6b8a3b554fb052d2317767835, type: 2}
+  EnemyData: {fileID: 11400000, guid: 47b392c6c31cd8645b8ee10671f9cf4b, type: 2}
   HP: 2
-  Delay: 1.5
+  Delay: 2.5
   Weapon: {fileID: 114140586282773130}
   _pathData: {fileID: 11400000, guid: cda5ef1855a7ac54b8c0f390b04f842c, type: 2}
 --- !u!114 &114573898865081956
@@ -701,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976c969a65ee370428105396997458e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: 4da376dadf1b9704ca2433ca4614f079, type: 2}
+  EnemyData: {fileID: 11400000, guid: 704bafb9345c7a64b8667a7ed60d45c4, type: 2}
   HP: 2
   Delay: 0
   Weapon: {fileID: 114819538064854406}
@@ -722,6 +725,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!114 &114819538064854406
 MonoBehaviour:
@@ -739,6 +743,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
   - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
+  SpreadType: 0
   _bulletsPool: {fileID: 11400000, guid: 789419257798a64439eda29f17ed92b9, type: 2}
 --- !u!212 &212119454495457788
 SpriteRenderer:
