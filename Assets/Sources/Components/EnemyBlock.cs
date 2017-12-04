@@ -54,12 +54,12 @@ namespace Components {
 		}
 
 		public IEnumerator SpawnBlockAfterDelay() {
-			yield return new WaitForSeconds(Delay);
 			if (_counter >= _blocksData.Blocks[GetNearest()].Count) {
 				_blocksData.Blocks[GetNearest()] = _blocksData.Blocks[GetNearest()].OrderBy(x => _rng.Next()).ToList();
 				_counter = 0;
 			}
 
+			yield return new WaitForSeconds(_blocksData.Blocks[GetNearest()][_counter].Delay);
 			Instantiate(_blocksData.Blocks[GetNearest()][_counter]);
 			_counter++;
 			Destroy(gameObject);
