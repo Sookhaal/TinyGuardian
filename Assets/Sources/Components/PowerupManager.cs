@@ -22,7 +22,7 @@ namespace Components {
 		public void SpawnPowerup() {
 			var _powerup = Instantiate(_powerUps[_powerUpIndex]);
 			_powerup.transform.position = new Vector3(12f, 0f, 0f);
-			_powerup.GetComponent<Rigidbody2D>().velocity = new Vector2(-1f, 0f);
+			_powerup.GetComponent<Rigidbody2D>().velocity = new Vector2(-3f, 0f);
 			_powerUpIndex++;
 
 			if (_powerUpIndex < _powerUps.Count) {
