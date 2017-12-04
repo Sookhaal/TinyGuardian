@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: TimeBetweenShot
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 0.1
-  Value: 0.1
+  StartingValue: 0.3
+  Value: 0.3

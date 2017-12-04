@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using Data;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace Components {
 	public class Player : MonoBehaviour {
 		public PlayerData PlayerData;
+		[SerializeField]
+		private UnityEvent _pause;
 		[SerializeField]
 		private GameEvent _deathEvent;
 		[SerializeField]
@@ -37,6 +40,7 @@ namespace Components {
 		private bool _canShoot = true;
 		private int _gogoFatness;
 		private bool _dead;
+		private bool _paused;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
@@ -80,6 +84,13 @@ namespace Components {
 				_selectWaterWeapon.Raise();
 				PlayerData.SelectedWeapon = 2;
 			}
+
+			if (!Input.GetButtonDown("Pause") || _paused) {
+				return;
+			}
+
+			_paused = true;
+			_pause.Invoke();
 		}
 
 		private IEnumerator RateLimiter() {
