@@ -16,12 +16,13 @@ namespace Components {
 			_rng = new Random();
 			_powerUps = Resources.LoadAll<PowerUp>("Powerups/Prefabs").ToList();
 			_powerUps = _powerUps.OrderBy(x => _rng.Next()).ToList();
-			print(_powerUps.Count);
 			_blockManager.SpawnBlock();
 		}
 
 		public void SpawnPowerup() {
-			Instantiate(_powerUps[_powerUpIndex]);
+			var _powerup = Instantiate(_powerUps[_powerUpIndex]);
+			_powerup.transform.position = new Vector3(12f, 0f, 0f);
+			_powerup.GetComponent<Rigidbody2D>().velocity = new Vector2(-3f, 0f);
 			_powerUpIndex++;
 
 			if (_powerUpIndex < _powerUps.Count) {

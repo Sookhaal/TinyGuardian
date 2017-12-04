@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentScreen: {fileID: 11400000, guid: 5d62824b5f4297842b1fa212ed4780e2, type: 2}
-  _delay: 5
+  _delay: 0
 --- !u!114 &2035718215
 MonoBehaviour:
   m_ObjectHideFlags: 0

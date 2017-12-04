@@ -68,6 +68,12 @@ namespace Components {
 			}
 			Destroy(gameObject);
 		}
+
+		private void OnTriggerExit2D(Collider2D collider) {
+			if (collider.tag == "Boundaries") {
+				Destroy(gameObject);
+			}
+		}
 	}
 
 	public enum PowerupType {

@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29969ec34f3f07649820950c74d3a0ad, type: 3}
   m_Name: RestartGame
   m_EditorClassIdentifier: 
-  LetPreviousScreenFade: 0
-  AutoFadeScreen: 1
+  LetPreviousScreenFade: 1
+  AutoFadeScreen: 0

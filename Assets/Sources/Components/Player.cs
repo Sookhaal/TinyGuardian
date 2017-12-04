@@ -33,7 +33,6 @@ namespace Components {
 		[SerializeField]
 		private Weapon _weapon;
 
-		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
 		private SpriteRenderer _spriteRenderer;
 		private Vector2 _input;
@@ -43,7 +42,6 @@ namespace Components {
 		private bool _paused;
 
 		private void Awake() {
-			_transform = GetComponent<Transform>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_input = new Vector2();
@@ -52,7 +50,12 @@ namespace Components {
 		}
 
 		private void Start() {
-			_selectEarthWeapon.Raise();
+			PlayerData.SelectedWeapon = 0;
+			if (PlayerData.SelectedWeapon == 0) {
+				_selectFireWeapon.Raise();
+			} else {
+				_selectWaterWeapon.Raise();
+			}
 		}
 
 		private void Update() {
@@ -65,24 +68,13 @@ namespace Components {
 				StartCoroutine(RateLimiter());
 			}
 
-			if (Input.GetButtonDown("SelectEarthWeapon")) {
-				_selectEarthWeapon.Raise();
-				PlayerData.SelectedWeapon = 0;
-			}
-
-			if (Input.GetButtonDown("SelectFireWeapon")) {
-				_selectFireWeapon.Raise();
-				PlayerData.SelectedWeapon = 1;
-			}
-
-			if (Input.GetButtonDown("SelectThunderWeapon")) {
-				_selectThunderWeapon.Raise();
-				PlayerData.SelectedWeapon = 3;
-			}
-
-			if (Input.GetButtonDown("SelectWaterWeapon")) {
-				_selectWaterWeapon.Raise();
-				PlayerData.SelectedWeapon = 2;
+			if (Input.GetButtonDown("SelectEarthWeapon") || Input.GetButtonDown("SelectFireWeapon") || Input.GetButtonDown("SelectThunderWeapon") || Input.GetButtonDown("SelectWaterWeapon")) {
+				PlayerData.SelectedWeapon = PlayerData.SelectedWeapon == 0 ? 1 : 0;
+				if (PlayerData.SelectedWeapon == 0) {
+					_selectFireWeapon.Raise();
+				} else {
+					_selectWaterWeapon.Raise();
+				}
 			}
 
 			if (!Input.GetButtonDown("Pause") || _paused) {
@@ -111,7 +103,7 @@ namespace Components {
 		}
 
 		public void CheckDeath() {
-			if (!(PlayerData.HP.Value <= 0f) || _dead)
+			if (PlayerData.HP.Value > 0f || _dead)
 				return;
 			_dead = true;
 			_deathEvent.Raise();

@@ -23,6 +23,10 @@ namespace Components {
 		}
 
 		private void Update() {
+			if (FloatValue.Value < 0f) {
+				return;
+			}
+
 			_scoreString = "";
 			_builder.Clear();
 			_builder.Append(_scoreString);

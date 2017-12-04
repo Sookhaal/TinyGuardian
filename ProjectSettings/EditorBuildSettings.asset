@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/Screens/Start.unity
-    guid: 2f9d563281ffa2543a4f5095dd7c580e
+    path: Assets/Resources/Scenes/Screens/Credits.unity
+    guid: 1101ca8a545fb0a4e9f705489a6049eb
   - enabled: 1
     path: Assets/Resources/Scenes/Screens/Splash.unity
     guid: 249affa18e7f1924588c9422d1a0116a
@@ -26,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Screens/GameOver.unity
     guid: ab0c131339687d34bb09323c5df276c7
-  - enabled: 1
-    path: Assets/Resources/Scenes/Screens/Credits.unity
-    guid: 1101ca8a545fb0a4e9f705489a6049eb
   - enabled: 1
     path: Assets/Resources/Scenes/Screens/RestartGame.unity
     guid: 116d32fddf3529b44bb9939b3a068a96

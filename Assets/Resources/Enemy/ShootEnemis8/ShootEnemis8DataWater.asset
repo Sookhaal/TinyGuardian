@@ -15,6 +15,6 @@ MonoBehaviour:
   StartingHP: 10
   TimeBetweenShot: 3
   ShootingPattern: {fileID: 11400000, guid: 0a31c10df078374488869e8891536b7f, type: 2}
-  SelectedWeapon: 2
+  SelectedWeapon: 1
   ScoreValue: 150
   BonusScore: 150

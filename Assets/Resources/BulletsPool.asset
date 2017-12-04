@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Name: BulletsPool
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11400000, guid: 8b3fd737384030f41a138917528638a0, type: 2}
   - {fileID: 11400000, guid: f16bbb6f3aad39348982ce6b9ab3fb5f, type: 2}
   - {fileID: 11400000, guid: ca11628775c99714ba7b6107db2e24c4, type: 2}
-  - {fileID: 11400000, guid: 5fae205226d70854b82852a86ea91897, type: 2}
   Bullets:
   - {fileID: 0}
   - {fileID: 0}

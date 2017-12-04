@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813ed009099b7604f926fa24fa000121, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  BonusDamageType: {fileID: 11400000, guid: 8d8530d1d94576f4da1d28724cb0d147, type: 2}
+  BonusDamageType: {fileID: 11400000, guid: 879c5ed3a8e663c48b3b357342815e48, type: 2}
