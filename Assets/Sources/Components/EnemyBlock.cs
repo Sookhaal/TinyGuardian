@@ -10,8 +10,7 @@ namespace Components {
 	public class EnemyBlock : MonoBehaviour {
 		public EnemyBlock[] TutorialBlocks;
 		public FloatDataReference ScoreThreshold;
-		[SerializeField]
-		private float _delay;
+		public float Delay;
 		private ScoreData _score;
 		private int _childrenLeft;
 		private BlocksData _blocksData;
@@ -49,13 +48,13 @@ namespace Components {
 		}
 
 		public IEnumerator SpawnTutorial() {
+			yield return new WaitForSeconds(TutorialBlocks[_tutorial].Delay);
 			Instantiate(TutorialBlocks[_tutorial]);
 			_tutorial++;
-			yield return null;
 		}
 
 		public IEnumerator SpawnBlockAfterDelay() {
-			yield return new WaitForSeconds(_delay);
+			yield return new WaitForSeconds(Delay);
 			if (_counter >= _blocksData.Blocks[GetNearest()].Count) {
 				_blocksData.Blocks[GetNearest()] = _blocksData.Blocks[GetNearest()].OrderBy(x => _rng.Next()).ToList();
 				_counter = 0;

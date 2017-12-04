@@ -33,7 +33,6 @@ namespace Components {
 		[SerializeField]
 		private Weapon _weapon;
 
-		private Transform _transform;
 		private Rigidbody2D _rigidbody2D;
 		private SpriteRenderer _spriteRenderer;
 		private Vector2 _input;
@@ -43,7 +42,6 @@ namespace Components {
 		private bool _paused;
 
 		private void Awake() {
-			_transform = GetComponent<Transform>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_input = new Vector2();
