@@ -51,8 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb84af8bdcff5e429f7292432a61514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TutorialBlocks: []
   ScoreThreshold:
     UseConstant: 1
     ConstantValue: 0
     Data: {fileID: 0}
-  _delay: 0
+  Delay: 0
