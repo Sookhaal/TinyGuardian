@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +31,7 @@ namespace Data {
 		public void ChangeScreen(ScreenData screenData) {
 			CurrentScreen = screenData;
 			SceneManager.LoadScene(screenData.name);
-			var loadScreenEvent = (GameEvent)Resources.Load($"Global/Screens/Event/Load{screenData.name}");
+			var loadScreenEvent = (GameEvent) Resources.Load($"Global/Screens/Event/Load{screenData.name}");
 			loadScreenEvent.Raise();
 		}
 

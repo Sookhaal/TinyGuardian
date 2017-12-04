@@ -118,6 +118,22 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: Space
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Mouse X
     descriptiveName: 
     descriptiveNegativeName: 
@@ -316,6 +332,22 @@ InputManager:
     negativeButton: 
     positiveButton: i
     altNegativeButton: 
+    altPositiveButton: 2
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SelectFireWeapon
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 1
+    altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: 0.001
@@ -331,6 +363,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: o
+    altNegativeButton: 
+    altPositiveButton: 3
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SelectWaterWeapon
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 2
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -348,6 +396,22 @@ InputManager:
     negativeButton: 
     positiveButton: u
     altNegativeButton: 
+    altPositiveButton: 1
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SelectEarthWeapon
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 0
+    altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: 0.001
@@ -363,6 +427,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: p
+    altNegativeButton: 
+    altPositiveButton: 4
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SelectThunderWeapon
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -381,6 +461,22 @@ InputManager:
     positiveButton: escape
     altNegativeButton: 
     altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Pause
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 6
+    altNegativeButton: 
+    altPositiveButton: joystick button 7
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
