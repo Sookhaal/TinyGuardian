@@ -1007,8 +1007,8 @@ MonoBehaviour:
   ScoreThreshold:
     UseConstant: 0
     ConstantValue: 0
-    Data: {fileID: 11400000, guid: f966022c5ef35254ea20f520bea03ca3, type: 2}
-  _delay: 6
+    Data: {fileID: 11400000, guid: d16030907a29f594da440f9bf3ba45ca, type: 2}
+  _delay: 3
 --- !u!212 &212069367708911882
 SpriteRenderer:
   m_ObjectHideFlags: 1
