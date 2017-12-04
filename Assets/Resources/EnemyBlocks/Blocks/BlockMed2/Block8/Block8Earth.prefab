@@ -302,7 +302,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Data: {fileID: 11400000, guid: 09a5c074433b4e649af43ab88c63faac, type: 2}
-  _delay: 6
+  _delay: 4
 --- !u!114 &114576151691962860
 MonoBehaviour:
   m_ObjectHideFlags: 1

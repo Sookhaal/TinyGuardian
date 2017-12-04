@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   Offsets:
-  - {x: 1, y: 1.25, z: 0}
-  - {x: 1, y: -1.25, z: 0}
-  VelocityCoef: 5
+  - {x: 2.5, y: 1.25, z: 0}
+  - {x: 2.5, y: -1.25, z: 0}
+  VelocityCoef: 3.5
   Sin: 1
   RateOfFire: {fileID: 11400000, guid: 999a33b1d1a4bb842821df7a02de2ec8, type: 2}
   ExplosionPattern: {fileID: 0}

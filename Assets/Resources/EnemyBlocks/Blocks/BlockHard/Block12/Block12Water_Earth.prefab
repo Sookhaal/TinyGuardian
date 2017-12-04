@@ -461,7 +461,7 @@ MonoBehaviour:
   ScoreThreshold:
     UseConstant: 0
     ConstantValue: 0
-    Data: {fileID: 11400000, guid: 09a5c074433b4e649af43ab88c63faac, type: 2}
+    Data: {fileID: 11400000, guid: 9461fb73fbd79a242a2daa868e39fc3c, type: 2}
   _delay: 6
 --- !u!114 &114818941336072150
 MonoBehaviour:

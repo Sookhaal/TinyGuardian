@@ -348,7 +348,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Data: {fileID: 11400000, guid: f966022c5ef35254ea20f520bea03ca3, type: 2}
-  _delay: 6
+  _delay: 4
 --- !u!212 &212486947841892524
 SpriteRenderer:
   m_ObjectHideFlags: 1
