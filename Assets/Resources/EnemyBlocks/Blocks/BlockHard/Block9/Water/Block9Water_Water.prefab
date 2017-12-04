@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 114286006815650512}
   - component: {fileID: 114210708419018608}
   m_Layer: 0
-  m_Name: Block9Water_Water 1
+  m_Name: Block9Water_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

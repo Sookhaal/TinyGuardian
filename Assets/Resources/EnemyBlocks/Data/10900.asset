@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e73633aff4716c48811fee017cd4740, type: 3}
-  m_Name: 28000
+  m_Name: 10900
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 26000
-  Value: 26000
+  StartingValue: 10900
+  Value: 10900
