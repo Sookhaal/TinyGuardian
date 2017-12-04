@@ -7,6 +7,8 @@ namespace Components {
 	public class Player : MonoBehaviour {
 		public PlayerData PlayerData;
 		[SerializeField]
+		private GameEvent _deathEvent;
+		[SerializeField]
 		private Sprite[] _gogoSprites;
 		[SerializeField]
 		private FloatData _timeBetweenShot;
@@ -34,6 +36,7 @@ namespace Components {
 		private Vector2 _input;
 		private bool _canShoot = true;
 		private int _gogoFatness;
+		private bool _dead;
 
 		private void Awake() {
 			_transform = GetComponent<Transform>();
@@ -94,6 +97,13 @@ namespace Components {
 			}
 			_gogoFatness += amount;
 			_spriteRenderer.sprite = _gogoSprites[_gogoFatness];
+		}
+
+		public void CheckDeath() {
+			if (!(PlayerData.HP.Value <= 0f) || _dead)
+				return;
+			_dead = true;
+			_deathEvent.Raise();
 		}
 	}
 }

@@ -122,12 +122,12 @@ Prefab:
     - target: {fileID: 224444941527737014, guid: 93caff454fddf6042a21289f960038ff,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 928
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 224444941527737014, guid: 93caff454fddf6042a21289f960038ff,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 581.5
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 224444941527737014, guid: 93caff454fddf6042a21289f960038ff,
         type: 2}
@@ -208,16 +208,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224164113810093654, guid: 93caff454fddf6042a21289f960038ff,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 224164113810093654, guid: 93caff454fddf6042a21289f960038ff,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93caff454fddf6042a21289f960038ff, type: 2}
@@ -1766,6 +1756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentScreen: {fileID: 11400000, guid: 90741ffd87427ff4cbf51bfb8b5bc204, type: 2}
+  _delay: 0
 --- !u!114 &1256384962
 MonoBehaviour:
   m_ObjectHideFlags: 0

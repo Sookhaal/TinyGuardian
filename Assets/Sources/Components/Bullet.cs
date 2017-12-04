@@ -70,6 +70,7 @@ namespace Components {
 				if (collider.tag == "Player") {
 					var player = collider.GetComponent<Player>();
 					player.PlayerData.HP.ApplyChange(-Damage);
+					player.CheckDeath();
 					gameObject.SetActive(false);
 				}
 				break;

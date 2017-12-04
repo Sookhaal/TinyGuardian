@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: HP
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 100
-  Value: 100
+  StartingValue: 10
+  Value: 85

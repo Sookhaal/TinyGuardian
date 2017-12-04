@@ -8,14 +8,16 @@ namespace Components {
 		public ScreenData CurrentScreen;
 		private GameEvent _fadeStart;
 		private FadeData _fadeData;
+		[SerializeField]
+		private float _delay = 2f;
 
 		private void Awake() {
-			_fadeData = (FadeData)Resources.Load("Global/Data/BlackFadeData");
-			_fadeStart = (GameEvent)Resources.Load("Global/Event/StartFade");
+			_fadeData = (FadeData) Resources.Load("Global/Data/BlackFadeData");
+			_fadeStart = (GameEvent) Resources.Load("Global/Event/StartFade");
 		}
 
 		private void Start() {
-			var loadScreenEvent = (GameEvent)Resources.Load($"Global/Screens/Event/Load{CurrentScreen.name}");
+			var loadScreenEvent = (GameEvent) Resources.Load($"Global/Screens/Event/Load{CurrentScreen.name}");
 			loadScreenEvent.Raise();
 		}
 
@@ -31,12 +33,11 @@ namespace Components {
 
 			if (screenData.AutoFadeScreen) {
 				_fadeStart.Raise();
-				yield return new WaitForSeconds(_fadeData.FadeDuration + 2f);
+				yield return new WaitForSeconds(_fadeData.FadeDuration + _delay);
 			}
 
 			_fadeStart.Raise();
 			yield return new WaitForSeconds(_fadeData.FadeDuration);
-
 			SceneManager.LoadSceneAsync(screenData.name);
 		}
 	}
