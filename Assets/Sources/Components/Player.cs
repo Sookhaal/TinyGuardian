@@ -40,11 +40,15 @@ namespace Components {
 		private int _gogoFatness;
 		private bool _dead;
 		private bool _paused;
+		private Transform _transform;
+		private Vector3 _correctedPosition;
 
 		private void Awake() {
+			_transform = GetComponent<Transform>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_input = new Vector2();
+			_correctedPosition = new Vector3();
 			_bulletsPool.SetupPool();
 			SceneManager.LoadSceneAsync("GameUI", LoadSceneMode.Additive);
 		}
@@ -75,6 +79,34 @@ namespace Components {
 				} else {
 					_selectWaterWeapon.Raise();
 				}
+			}
+
+			if (_transform.position.x > 10f) {
+				_correctedPosition.x = 10f;
+				_correctedPosition.y = _transform.position.y;
+				_correctedPosition.z = _transform.position.z;
+				_transform.position = _correctedPosition;
+			}
+
+			if (_transform.position.x < -10f) {
+				_correctedPosition.x = -10f;
+				_correctedPosition.y = _transform.position.y;
+				_correctedPosition.z = _transform.position.z;
+				_transform.position = _correctedPosition;
+			}
+
+			if (_transform.position.y < -5.5f) {
+				_correctedPosition.x = _transform.position.x;
+				_correctedPosition.y = -5.5f;
+				_correctedPosition.z = _transform.position.z;
+				_transform.position = _correctedPosition;
+			}
+
+			if (_transform.position.y > 5.5f) {
+				_correctedPosition.x = _transform.position.x;
+				_correctedPosition.y = 5.5f;
+				_correctedPosition.z = _transform.position.z;
+				_transform.position = _correctedPosition;
 			}
 
 			if (!Input.GetButtonDown("Pause") || _paused) {

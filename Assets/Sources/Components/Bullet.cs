@@ -69,7 +69,16 @@ namespace Components {
 			case true:
 				if (collider.tag == "Player") {
 					var player = collider.GetComponent<Player>();
-					player.PlayerData.HP.ApplyChange(-Damage);
+					if (player.PlayerData.CurrentType != BulletType) {
+						player.PlayerData.HP.ApplyChange(-Damage);
+					} else {
+						if (player.PlayerData.HP.Value + Damage > player.PlayerData.HP.StartingValue) {
+							player.PlayerData.HP.SetValue(player.PlayerData.HP.StartingValue);
+						} else {
+							player.PlayerData.HP.ApplyChange(Damage);
+						}
+					}
+
 					player.CheckDeath();
 					gameObject.SetActive(false);
 				}

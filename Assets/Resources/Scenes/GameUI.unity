@@ -585,7 +585,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1666268834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -761, y: 418, z: 0}
+  m_LocalPosition: {x: -788.5, y: 418, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 177295737}
@@ -647,7 +647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 000000000
+  m_Text: SCORE
 --- !u!222 &1666268838
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108904433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -774.5, y: 374, z: 0}
+  m_LocalPosition: {x: -740.5, y: 374, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 177295737}
@@ -991,9 +991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloatValue: {fileID: 11400000, guid: 3c356869eff45e04c806f54f2fe1d072, type: 2}
   _scoreColor: {r: 0, g: 0, b: 0, a: 1}
-  _zeroColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.39607844}
+  _zeroColor: {r: 0, g: 0, b: 0, a: 1}
   _padding: 3
-  _prefix: '<color=#96969665>x</color> '
+  _prefix: '<color=#000000FF>x</color> '
 --- !u!114 &2108904436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: MULTIPLIER
 --- !u!222 &2108904438
 CanvasRenderer:
   m_ObjectHideFlags: 0

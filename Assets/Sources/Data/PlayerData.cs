@@ -11,12 +11,18 @@ namespace Data {
 		public FloatData MinimumSpeed;
 		public FloatData MaximumSpeed;
 		public int SelectedWeapon;
+		public BulletType CurrentType;
 
 		private void OnEnable() {
 			SpreadTypes = new List<SpreadType>();
 			foreach (var spreadType in SpreadTypesStart) {
 				SpreadTypes.Add(spreadType);
 			}
+		}
+
+		public void SetCurrentType(BulletType bulletType) {
+			Debug.Log($"Current type: {bulletType}");
+			CurrentType = bulletType;
 		}
 
 		public void AddToCurrentSpeed(float amount) {
