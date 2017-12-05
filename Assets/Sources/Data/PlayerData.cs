@@ -23,7 +23,6 @@ namespace Data {
 		}
 
 		public void SetCurrentType(BulletType bulletType) {
-			Debug.Log($"Current type: {bulletType}");
 			CurrentType = bulletType;
 		}
 

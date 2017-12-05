@@ -73,12 +73,12 @@ namespace Components {
 						// Damage
 						player.PlayerData.HP.ApplyChange(-Damage);
 					} else {
-						if (player.PlayerData.HP.Value + 1f > player.PlayerData.HP.StartingValue) {
+						if (player.PlayerData.HP.Value + Damage * 0.25f > player.PlayerData.HP.StartingValue) {
 							// Set to max
 							player.PlayerData.HP.SetValue(player.PlayerData.HP.StartingValue);
 						} else {
 							// Heal
-							player.PlayerData.HP.ApplyChange(1f);
+							player.PlayerData.HP.ApplyChange(Damage * 0.25f);
 						}
 					}
 

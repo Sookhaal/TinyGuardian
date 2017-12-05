@@ -12,7 +12,7 @@ namespace Components {
 		}
 
 		private void Update() {
-			_image.fillAmount = HP.Value / HP.StartingValue;
+			_image.fillAmount = Mathf.Lerp(_image.fillAmount, HP.Value / HP.StartingValue, Time.deltaTime * 3f);
 		}
 	}
 }
