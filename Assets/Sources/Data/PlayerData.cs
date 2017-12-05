@@ -6,6 +6,8 @@ namespace Data {
 	public class PlayerData : ScriptableObject {
 		public List<SpreadType> SpreadTypesStart;
 		public List<SpreadType> SpreadTypes;
+		public float Acceleration;
+		public float Deceleration;
 		public FloatData HP;
 		public FloatData CurrentSpeed;
 		public FloatData MinimumSpeed;

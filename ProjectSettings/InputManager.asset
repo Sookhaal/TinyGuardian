@@ -330,7 +330,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: i
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 2
     gravity: 1000
@@ -362,7 +362,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: o
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 3
     gravity: 1000
@@ -394,7 +394,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: u
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 1
     gravity: 1000
@@ -426,7 +426,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: p
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 4
     gravity: 1000
@@ -459,7 +459,7 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
-    altNegativeButton: 
+    altNegativeButton: p
     altPositiveButton: 
     gravity: 1000
     dead: 0.001

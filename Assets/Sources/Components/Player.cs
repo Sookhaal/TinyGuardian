@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Data;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -63,8 +64,14 @@ namespace Components {
 		}
 
 		private void Update() {
-			_input.x = Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value;
-			_input.y = Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value;
+			if (Input.GetAxis("Horizontal") > 0f || Input.GetAxis("Horizontal") < 0f)
+				_input.x = Mathf.Lerp(_input.x, Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value, Time.deltaTime * PlayerData.Acceleration);
+			else
+				_input.x = Mathf.Lerp(_input.x, Input.GetAxis("Horizontal") * PlayerData.CurrentSpeed.Value, Time.deltaTime * PlayerData.Deceleration);
+			if (Input.GetAxis("Horizontal") > 0f || Input.GetAxis("Horizontal") < 0f)
+				_input.y = Mathf.Lerp(_input.y, Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value, Time.deltaTime * PlayerData.Acceleration);
+			else
+				_input.y = Mathf.Lerp(_input.y, Input.GetAxis("Vertical") * PlayerData.CurrentSpeed.Value, Time.deltaTime * PlayerData.Deceleration);
 
 			if (Input.GetButton("Space") && _canShoot) {
 				_playerShoot.Raise();

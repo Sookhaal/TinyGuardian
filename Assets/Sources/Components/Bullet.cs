@@ -70,12 +70,15 @@ namespace Components {
 				if (collider.tag == "Player") {
 					var player = collider.GetComponent<Player>();
 					if (player.PlayerData.CurrentType != BulletType) {
+						// Damage
 						player.PlayerData.HP.ApplyChange(-Damage);
 					} else {
-						if (player.PlayerData.HP.Value + Damage > player.PlayerData.HP.StartingValue) {
+						if (player.PlayerData.HP.Value + 1f > player.PlayerData.HP.StartingValue) {
+							// Set to max
 							player.PlayerData.HP.SetValue(player.PlayerData.HP.StartingValue);
 						} else {
-							player.PlayerData.HP.ApplyChange(Damage);
+							// Heal
+							player.PlayerData.HP.ApplyChange(1f);
 						}
 					}
 
