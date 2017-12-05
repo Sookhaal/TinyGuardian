@@ -51,7 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb84af8bdcff5e429f7292432a61514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialBlocks: []
+  TutorialBlocks:
+  - {fileID: 114496782087147712, guid: c4ab1580c15b8a944a852470c41605f7, type: 2}
+  - {fileID: 114868017945023834, guid: b17527a67cedfa84c87ded3e7809e6ba, type: 2}
+  - {fileID: 114643030683439482, guid: 754d1a18181bfe040a60506bdcb8fb1c, type: 2}
   ScoreThreshold:
     UseConstant: 1
     ConstantValue: 0

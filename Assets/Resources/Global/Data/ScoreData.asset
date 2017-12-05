@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: {fileID: 11400000, guid: 139f402d363d4854da074875d7123916, type: 2}
-  Multiplier: 1
+  Multiplier: {fileID: 11400000, guid: 3c356869eff45e04c806f54f2fe1d072, type: 2}

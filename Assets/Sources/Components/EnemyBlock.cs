@@ -8,7 +8,7 @@ using Random = System.Random;
 
 namespace Components {
 	public class EnemyBlock : MonoBehaviour {
-		public EnemyBlock[] TutorialBlocks;
+		public EnemyBlock[] TutorialBlocks = new EnemyBlock[0];
 		public FloatDataReference ScoreThreshold;
 		public float Delay;
 		private ScoreData _score;
@@ -25,6 +25,9 @@ namespace Components {
 			_blocksData = Resources.Load<BlocksData>("EnemyBlocks/AllBlocks");
 			_blocksData.Blocks[GetNearest()] = _blocksData.Blocks[GetNearest()].OrderBy(x => _rng.Next()).ToList();
 			_spawnBlockEvent = Resources.Load<GameEvent>("EnemyBlocks/Events/SpawnBlock");
+		}
+
+		private void Start() {
 		}
 
 		public void CheckBlockIsDone() {
@@ -45,6 +48,10 @@ namespace Components {
 
 		public void SpawnBlock() {
 			StartCoroutine(_tutorial < TutorialBlocks.Length ? SpawnTutorial() : SpawnBlockAfterDelay());
+		}
+
+		public void StartTutorial() {
+			StartCoroutine(SpawnTutorial());
 		}
 
 		public IEnumerator SpawnTutorial() {

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e73633aff4716c48811fee017cd4740, type: 3}
-  m_Name: Score
+  m_Name: ScoreMultiplier
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  StartingValue: 0.1
+  StartingValue: 1
   Value: 1

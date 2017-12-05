@@ -16,6 +16,8 @@ namespace Components {
 		private Text _text;
 		private string _scoreString;
 		private StringBuilder _builder;
+		[SerializeField]
+		private string _prefix;
 
 		private void Awake() {
 			_text = GetComponent<Text>();
@@ -23,11 +25,7 @@ namespace Components {
 		}
 
 		private void Update() {
-			if (FloatValue.Value < 0f) {
-				return;
-			}
-
-			_scoreString = "";
+			_scoreString = _prefix;
 			_builder.Clear();
 			_builder.Append(_scoreString);
 			for (var i = 0; i < _padding - FloatValue.Value.ToString("0").Length; i++) {

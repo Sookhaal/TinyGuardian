@@ -64,11 +64,11 @@ namespace Components {
 
 		public void AddScore(bool useBonus = false) {
 			if (useBonus) {
-				_score.Score.ApplyChange((EnemyData.ScoreValue + EnemyData.BonusScore) * _score.Multiplier);
-				_score.Multiplier++;
+				_score.Score.ApplyChange((EnemyData.ScoreValue + EnemyData.BonusScore) * _score.Multiplier.Value);
+				_score.Multiplier.ApplyChange(1f);
 			} else {
-				_score.Score.ApplyChange(EnemyData.ScoreValue * _score.Multiplier);
-				_score.Multiplier = 1f;
+				_score.Score.ApplyChange(EnemyData.ScoreValue * _score.Multiplier.Value);
+				_score.Multiplier.SetValue(1f);
 			}
 			_checkBlockDone.Raise();
 			Destroy(gameObject);
